@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
 
  * {
   margin: 0;
@@ -23,7 +24,7 @@
 .header-layout{ /*headerのデザイン*/
   display: flex;
   height: 70px;
-  backgorund-color: blue;
+  backgorund-color: #a9a9a9;
 }
 .login_title{                            /*『ログイン画面』のデザイン*/
   width: 300px;
@@ -64,10 +65,8 @@ width: 410px;
 height: 40px;
 }
 footer{
-  height: 50px;
+  height: 30px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  position: absolute; /*絶対位置*/
-  bottom: 0; /*下に固定*/
 }

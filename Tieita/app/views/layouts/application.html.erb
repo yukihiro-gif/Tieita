@@ -9,19 +9,20 @@
   </head>
 
   <body>
-    <header>
-      <div class="container" style="background-color: #a9a9a9;">
+    <header style="background-color: #a9a9a9;">
+      <div class="container">
         <div class="header-layout">
           <% if user_signed_in? %>
            <div class="header-box">logo</div>
            <div class="header-box">検索用タブ</div>
+           <div class="header-box">作成例</div>
            <div class="header-box"><%= button_to "My page", homes_about_path %></div><!--あとでリンク先変更-->
-           <div class="header-box">logout</div>
+           <div class="header-box"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></div>
           <% else %>
            <div class="header-box">logo</div>
            <div class="header-box"><%= button_to "About", homes_about_path %></div><!--あとでリンク先変更-->
-           <div class="header-box">新規登録</div>
-           <div class="header-box">ログイン</div>
+           <div class="header-box"><%= button_to "新規登録", new_user_registration_path, method: :get %></div>
+           <div class="header-box"><%= button_to "ログイン", new_user_session_path, method: :get  %></div>
           <% end %>
         </div>
       </div>

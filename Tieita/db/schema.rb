@@ -10,55 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210710020104) do
+ActiveRecord::Schema.define(version: 2021_07_10_020104) do
 
   create_table "articles", force: :cascade do |t|
-    t.integer  "user_id",                   null: false
-    t.string   "title",        default: "", null: false
-    t.text     "situation",    default: "", null: false
-    t.string   "image1",       default: "", null: false
-    t.text     "description1", default: "", null: false
-    t.string   "image2",       default: "", null: false
-    t.text     "description2", default: "", null: false
-    t.string   "image3",       default: "", null: false
-    t.text     "description3", default: "", null: false
-    t.string   "image4",       default: "", null: false
-    t.text     "description4", default: "", null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer "user_id", null: false
+    t.string "title", default: "", null: false
+    t.text "situation", default: "", null: false
+    t.string "image1", default: "", null: false
+    t.text "description1", default: "", null: false
+    t.string "image2", default: "", null: false
+    t.text "description2", default: "", null: false
+    t.string "image3", default: "", null: false
+    t.text "description3", default: "", null: false
+    t.string "image4", default: "", null: false
+    t.text "description4", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer  "user_id",         null: false
-    t.integer  "post_comment_id", null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer "user_id", null: false
+    t.integer "post_comment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "post_comments", force: :cascade do |t|
-    t.integer  "user_id",                 null: false
-    t.integer  "article_id",              null: false
-    t.text     "string",     default: "", null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer "user_id", null: false
+    t.integer "article_id", null: false
+    t.text "string", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "name_sei",               default: "", null: false
-    t.string   "name_mei",               default: "", null: false
-    t.string   "name_kana_sei",          default: "", null: false
-    t.string   "name_kana_mei",          default: "", null: false
-    t.integer  "tel",                                 null: false
-    t.string   "profile_name",           default: "", null: false
-    t.string   "profile_image",          default: "", null: false
-    t.text     "introduction",           default: "", null: false
-    t.string   "reset_password_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name_sei", default: "", null: false
+    t.string "name_mei", default: "", null: false
+    t.string "name_kana_sei", default: "", null: false
+    t.string "name_kana_mei", default: "", null: false
+    t.integer "tel", null: false
+    t.string "profile_name", default: "", null: false
+    t.string "profile_image", default: "", null: false
+    t.text "introduction", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -2,10 +2,9 @@
 
 <%= form_with model: @user, url: user_session_path, local:true do |f| %>
 <table class="login_table">
-  <tr><th class="login-item">お名前</th></tr>
+  <tr><th class="login-item">enail</th></tr>
   <tr>
-    <td class="login-itemA"><%= f.text_field :name_sei, placeholder: "姓", autofocus: true, autocomplete: "name_sei" %></td>
-    <td class="login-itemA"><%= f.text_field :name_mei, placeholder: "名", autofocus: true, autocomplete: "name_mei" %></td>
+   <td><%= f.email_field :email, placeholder: "(例)tarou@gmail.com", autofocus: true, autocomplete: "email" %></td>
   </tr>
 </table>
 <table class="login_table">
