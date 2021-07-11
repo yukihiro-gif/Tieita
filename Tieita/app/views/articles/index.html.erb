@@ -8,12 +8,27 @@
     <div class="col-md-7" style="background-color:#c0c0c0"></div>
     <div class="col-md-3" style="background-color:#d3d3d3"></div>
   </div>
-  <div class="row1" style="background-color:#f5f5f5">
-    <div>
-        <ul id="tab-menu", type="circle">
-            <li><a href="#tab1", class="active"></a></li>
-            <li><a href="#tab2"></a></li>
+  <div class="row1">
+    <div class="wrap">
+        <ul id="tab-menu">
+            <li><a href="#tab1" class="active">テキスト１</a></li>
+            <li><a href="#tab2" class="">テキスト２</a></li>
+            <li><a href="#tab3" class="">テキスト３</a></li>
+            <li><a href="#tab4" class="">テキスト４</a></li>
         </ul>
+        <div id="tab-contents">
+            <% @articles.each do |article| %>
+            <div id="tab1" class="tab">
+                <div><%= article.title %></div>
+                <div><%= article.situation %></div>
+             <% if current_user %>
+                <div><%= button_to "編集", homes_path %></div> <!--あとでリンク先変更-->
+                <div><%= button_to "削除", homes_path %></div>
+             <% end %>
+            </div>
+            <% end %>
+        </div>
     </div>
   </div>
 </div>
+
