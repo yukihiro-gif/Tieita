@@ -21,6 +21,7 @@
   box-sizing: border-box; /*リセットcssの記述*/
 }
 
+/*以下、headerのレイアウト*/
 .header-layout{ /*headerのデザイン*/
   display: flex;
   height: 70px;
@@ -69,4 +70,115 @@ footer{
   width: 100%;
   margin: 0 auto;
   text-align: center;
+}
+
+/*article/new.html.erbの記述*/
+.article-new-frame1{                      /*投稿フォーム全体の枠組み*/
+  width: 1000px;
+  height: 1200px;
+}
+.article-new-title{                       /*title部分のレイアウト*/
+  width: 1000px;
+  height: 50px;
+  font-size: 30px;
+  padding-top: 20px;
+  text-align: left;
+}
+.article-new-frame2{                      /*image/著者・コメント/situation全体の枠組み*/
+  display: flex;
+  width: 1000px;
+  height: 300px;
+}
+.article-new-frame3{                      /*image部分の枠組み*/
+  width: 400px;
+  height: 300px;
+}
+.article-new-frame4{                      /*著者・コメント/situation全体の枠組み*/
+  width: 600px;
+  height: 300px;
+}
+.article-new-frame5{                      /*著者・コメント/situation個別の枠組み*/
+  width: 600px;
+  height: 150px;
+}
+.article-new-frame6{                      /*投稿記事全体フォーム全体の枠組み*/
+  width: 1000px;
+  height: 600px;
+}
+.make-article-procedure{
+  width: 100%;
+  height: 650px;
+}
+.article-contents{
+  width: 1000px;
+  height: 160px;
+  display: flex;
+}
+.article-text-field{                      /*投稿記事部分の枠組み*/
+  width: 750px;
+  height: 150px;
+}
+
+
+/*以下、index.htmlのコード*/
+.article-form{
+  height: 400px;
+  width: 500px;
+}
+.article-form1{
+  height: 200px;
+  width: 400px;
+}
+.container1{
+  height: 1500px;
+  width: 1100px;
+  margin: 0 auto;
+}
+.article-index-layout{
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+}
+.row1{
+  width: 100%;
+  height: 1200px;
+  margin-top: 20px;
+}
+#tab-menu{
+  display: flex;                 /*タブメニューの横並び*/
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+}
+#tab-menu li{                    /*タブの幅変更*/
+  list-style-type: none;
+  width: 25%;
+}
+#tab-menu li a {
+  color: #fff;
+  text-decoration: none;        /*リンクの下線部を消す*/
+  display: block;
+  padding: 20px;
+  text-align: center;
+  background: #000;
+  border: 1px solid #000;
+  border-bottom: none;
+}
+#tab-menu .active {             /*一番最初に表示される(active)タブと文字色変更*/
+  background: #fff;
+  color: #000;
+}
+#tab-contents {                 /*タブ内の要素を横並び*/
+  display: flex;
+  flex-wrap: wrap;
+}
+#tab-contents .tab {            /*タブのデザイン*/
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #000;
+  border-top: none;
+}
+#tab-contents p {
+  color: #000;
+  line-height: 2.5;
 }
