@@ -22,7 +22,7 @@
                 <div><%= article.title %></div>
                 <div><%= article.situation %></div>
              <% if current_user %>
-                <div><%= button_to "編集", homes_path %></div> <!--あとでリンク先変更-->
+                <div><%= button_to "編集", new_article_path(article) %></div> <!--あとでリンク先変更-->
                 <div><%= button_to "削除", homes_path %></div>
              <% end %>
             </div>

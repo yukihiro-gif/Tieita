@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  resources :users
   devise_for :users
   root to: 'homes#top'
   resources :articles
@@ -13,4 +15,6 @@ Rails.application.routes.draw do
   get 'post_comments/edit'
   get 'homes/top'
   get 'homes/about'
+
+
   end
