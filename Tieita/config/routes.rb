@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  resources :users
+  get 'profiles/new'
+  resources :pofiles
   devise_for :users
   root to: 'homes#top'
   resources :articles

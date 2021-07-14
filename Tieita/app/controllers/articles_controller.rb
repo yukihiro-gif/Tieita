@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
-  
+
   def new
    @article = Article.new()
   end
-  
+
   def index
     @articles = Article.all
   end
@@ -18,23 +18,23 @@ class ArticlesController < ApplicationController
 
   def create
     article = Article.new(params_article)
-    user.id = current_user.id
-    
+    article.user_id = current_user.id
+
    if article.save
     redirect_to ""
    else
-    render :new
+    redirect_to new_article_path
    end
   end
 
   def update
     article = Article.find(params[:id])
-    
+
     if article.update(params_article)
      redirect_to articles_path
     else
      render :edit
-    end 
+    end
   end
 
   def destroy
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
 private
 
 def params_article
- params.require(:article).permit(:title, :situation, :image1, :description1, :image2, :description2, :image3, :description3, :image4, :description4 )
+ params.require(:article).permit(:title, :situation, :article_image1, :description1, :article_image2, :description2, :article_image3, :description3, :article_image4, :description4 )
 end
 
 end

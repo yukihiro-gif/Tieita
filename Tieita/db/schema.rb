@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_020104) do
+ActiveRecord::Schema.define(version: 2021_07_14_070009) do
 
   create_table "articles", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title", default: "", null: false
     t.text "situation", default: "", null: false
-    t.string "image1", default: "", null: false
+    t.string "article_image1", default: "", null: false
     t.text "description1", default: "", null: false
-    t.string "image2", default: "", null: false
+    t.string "article_image2", default: "", null: false
     t.text "description2", default: "", null: false
-    t.string "image3", default: "", null: false
+    t.string "article_image3", default: "", null: false
     t.text "description3", default: "", null: false
-    t.string "image4", default: "", null: false
+    t.string "article_image4", default: "", null: false
     t.text "description4", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

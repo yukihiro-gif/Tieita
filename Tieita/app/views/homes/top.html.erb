@@ -4,3 +4,6 @@
     <%= button_to "START", articles_path, method: :get, class: "homes-start-button" %>
   </div>
 </div>
+<%= @users.each do |user| %>
+<%= user.id %>
+<% end %>
