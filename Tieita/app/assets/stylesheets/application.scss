@@ -68,7 +68,7 @@ footer{
 }
 .article-new-title{                       /*title部分のレイアウト*/
   width: 1000px;
-  height: 50px;
+  height: 80px;
   font-size: 30px;
   padding-top: 20px;
   text-align: left;
@@ -89,6 +89,12 @@ footer{
 .article-new-frame5{                      /*著者・コメント/situation個別の枠組み*/
   width: 600px;
   height: 150px;
+  padding-top: 50px;
+  padding-left: 20px;
+}
+.article-new-frame5-2{
+  padding-top: 50px;
+  padding-left: 20px;
 }
 .article-new-frame6{                      /*投稿記事全体フォーム全体の枠組み*/
   width: 1000px;
@@ -102,6 +108,10 @@ footer{
   width: 1000px;
   height: 160px;
   display: flex;
+}
+.article-image{
+  width: 250px;
+  height: 150px;
 }
 .article-text-field{                      /*投稿記事部分の枠組み*/
   width: 750px;
@@ -193,22 +203,70 @@ footer{
   line-height: 2.5;
 }
 
-/*users/newの記述*/
-.mypage-layout{
+/*profiles/editの記述*/
+.mypage-title-frame{
+  width: 300px;
+  border-bottom: 2px solid #f5f5f5;
+  margin: 0 auto ;
+  padding-top: 20px;
+}
+.mypage-title{
+  text-align: center;
+
+}
+.mypage-layout{                                  /*会員情報入力フォームの枠*/
   width: 1240px;
-  height: 700px;
+  height: 440px;
   margin: 20px auto;
-  display: flex;
+  font-size: 18px;
+  border-bottom: 2px dashed #d3d3d3;
+}
+.mypage-form{
+  width: 900px;
+  height: 600px;
+  margin: 0 auto ;
 }
 .mypage-layout1{
-  width: 300px;
-  height: 200px;
+  width: 1100px;
+  height: 350px;
+}
+.mypage-layout-left{
+  width: 350px;
+  border-right: 2px dashed #d3d3d3;
 }
 .mypage-layout2{
-  width: 400px;
-  height: 100px;
+  width: 700px;
+  height: 400px;
+
 }
 .mypage-layout3{
   width: 400px;
   height: 100px;
+  margin-left: 50px;
+}
+.mypage-layout4{
+  width: 400px;
+  height: 190px;
+  margin-left: 50px;
+}
+.mypage-form2{
+ width: 250px;
+}
+.profile-form2{
+  width: 550px;
+  height: 120px;
+}
+.personal-label{                      /*各フォームの名称*/
+  font-weight:600;
+  font-size: 20px;
+}
+.mypage-btn{                         /*プロフィール作成ボタン*/
+  width: 600px;
+  text-align:right;
+}
+
+.maypage-articles-index{
+  width: 900px;
+  height: 40px;
+  display: flex;
 }

@@ -1,36 +1,52 @@
 <div class="container article-new-frame1">
 
-  <div class="article-new-title"><%= article.title %></div>
+  <div class="article-new-title">『<%= @article.title %>』</div>
   <div class="row article-new-frame2">
     <div class="article-new-frame3" style="background-color:#dcdcdc;">
-
+      <%= @article.user.profile_image %>
     </div>
     <div class="article-new-frame4">
       <div class="article-new-frame5" style="background-color:#d3d3d3;">
-
+       <div>
+          <tr>
+          <th>ユーザネーム：</th>
+          <td><%= @article.user.profile_name %></td>
+        </tr>
+       </div>
+       <div>
+         <tr>
+          <th>introduction：</th>
+          <td><%= @article.user.introduction %></td>
+        </tr>
+       </div>
       </div>
       <div class="article-new-frame5" style="background-color:#c0c0c0;">
-        <%= article.situation %>
+        <div>
+         <tr>
+          <th>シチュエーション：</th>
+          <td><%= @article.situation %></td>
+        </tr>
+       </div>
       </div>
     </div>
   </div>
   <div class="row article-new-frame6">
     <div class="make-article-procedure" style="background-color:#f5f5f5;">
       <div class="article-contents">
-        <div class="article-image"><%= article.image1 %></div>
-        <div class="article-text-field" style="background-color:#ffa500;"><%= article.description1 %></div>
+        <div class="article-image"><%= @article.article_image1 %></div>
+        <div class="article-text-field" style="background-color:#ffa500;"><%= @article.description1 %></div>
       </div>
       <div class="article-contents">
-        <div class="article-image"><%= article.image2 %></div>
-        <div class="article-text-field" style="background-color:#ffa500;"><%= article.description2 %></div>
+        <div class="article-image"><%= @article.article_image2 %></div>
+        <div class="article-text-field" style="background-color:#ffa500;"><%= @article.description2 %></div>
       </div>
       <div class="article-contents">
-        <div class="article-image"><%= article.image3 %></div>
-        <div class="article-text-field" style="background-color:#ffa500;"><%= article.description3 %></div>
+        <div class="article-image"><%= @article.article_image3 %></div>
+        <div class="article-text-field" style="background-color:#ffa500;"><%= @article.description3 %></div>
       </div>
       <div class="article-contents">
-        <div class="article-image"><%= article.image4 %></div>
-        <div class="article-text-field" style="background-color:#ffa500;"><%= article.description4 %></div>
+        <div class="article-image"><%= @article.article_image4 %></div>
+        <div class="article-text-field" style="background-color:#ffa500;"><%= @article.description4 %></div>
       </div>
     </div>
   </div>

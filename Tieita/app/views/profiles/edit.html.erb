@@ -1,47 +1,52 @@
+<div>
+  <div class="mypage-title-frame"><h3 class="mypage-title">プロフィール編集</h3></div>
+</div>
 <div class="container mypage-layout">
-  <%= form_with model: @user, url:users_path, local: true do |f| %>
-  <div class="row">
-  <div class="col mypage-layout1" style="background-color:#c0c0c0;">
-    <%= f.attachment_field :profile_image %>
+  <%= form_with model: @user, url: profile_path, method: :patch, class: "mypage-form", local: true do |f| %>
+  <div class="row mypage-layout1">
+    <div class="mypage-layout-left">
+    <div class="mypage-layout3">
+      <div class="personal-label">電話番号</div>
+      <div class="personal-main"><%= f.text_field :tel, class: "mypage-form2" %></div>
+    </div>
+    <div class="mypage-layout3">
+      <div class="personal-label">email</div>
+      <div class="personal-main"><%= f.email_field :email, class: "mypage-form2" %></div>
+    </div>
+    <div class="mypage-layout3">
+      <div class="personal-label">パスワード</div>
+      <div class="personal-main"><%= f.password_field :password, class: "mypage-form2" %></div>
+    </div>
   </div>
-  <div class="col mypage-layout2">
+
+   <div class="mypage-layout2">
     <div class="mypage-layout3" style="background-color:#d3d3d3;">
-      <div><p>プロフィール名</p></div>
+      <div><p class="personal-label">プロフィール名</p></div>
       <div><%= f.text_field :profile_name %></div>
     </div>
-    <div class="mypage-layout3" style="background-color:#f5f5f5;">
-      <div><p>introduction</p></div>
-      <div><%= f.text_area :introduction %></div>
+    <div class="mypage-layout3" style="background-color:#d3d3d3;">
+      <div><p class="personal-label">プロフィール画像</p></div>
+      <div><%= f.file_field :profile_image, class: "profile-form" %></div>
     </div>
+    <div class="mypage-layout4" style="background-color:#f5f5f5;">
+      <div><p class="personal-label">introduction</p></div>
+      <div><%= f.text_area :introduction, class: "profile-form2" %></div>
+    </div>
+    <div class="mypage-btn"><%= f.submit "プロフィール作成"%></div>
+    </div>
+
   </div>
   </div>
-  <div class="row">
-    <div><p>個人情報</p></div>
-    <div class="personal-infomation-box">
-      <div class="personal-label">電話番号</div>
-      <div class="personal-main"><%= f.text_field :tel %></div>
-    </div>
-    <div class="personal-infomation-box">
-      <div class="personal-label">email</div>
-      <div class="personal-main"><%= f.email_field :email %></div>
-    </div>
-    <div class="personal-infomation-box">
-      <div class="personal-label">パスワード</div>
-      <div class="personal-main"><%= f.password_field :password %></div>
-    </div>
-    <div class="personal-infomation-box">
-      <div class="personal-label"></div>
-      <div class="personal-main"></div>
-    </div>
-  </div>
-  <%= f.submit "プロフィール作成" %>
   <% end %>
+</div>
+<div>
+   <div class="mypage-title-frame"><h3 class="mypage-title">投稿記事一覧</h3></div>
 </div>
 <div class="container">
     <% @users.each do |user| %>
     <div class="row mypage-articles-index">
       <div><%= user.profile_image %></div>
-      <div><%= user.article.title %></div>
+      <div></div>
       <div><%= button_to "編集" , edit_article_path %></div>
       <div><%= button_to "削除" , article_path, method: :delete %></div>
     </div>

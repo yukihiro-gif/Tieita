@@ -1,0 +1,21 @@
+<div class="container mypage-layout">
+  <%= form_with model: @user, url: profiles_path, method: :post, local: true do |f| %>
+  <div class="row">
+  <div class="mypage-layout2">
+    <div class="mypage-layout3" style="background-color:#d3d3d3;">
+      <div><p>プロフィール名</p></div>
+      <div><%= f.text_field :profile_name %></div>
+    </div>
+    <div class="mypage-layout3" style="background-color:#d3d3d3;">
+      <div><p>プロフィール画像</p></div>
+      <div><%= f.file_field :profile_image, class: "profile-form" %></div>
+    </div>
+    <div class="mypage-layout3" style="background-color:#f5f5f5;">
+      <div><p>introduction</p></div>
+      <div><%= f.text_area :introduction, class: "profile-form" %></div>
+    </div>
+    <div><%= f.submit "プロフィール作成" %></div>
+  </div>
+  </div>
+  <% end %>
+</div>
