@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   resources :articles
   get 'profiles/:id/edit' => 'profiles#edit'
+  get 'profiles/:id/show' => 'profiles#show'
   get 'articles/:id/show' => 'articles#show'
   get 'homes/top'
   get 'homes/about'
