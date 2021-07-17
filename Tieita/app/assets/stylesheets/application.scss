@@ -105,6 +105,10 @@ footer{
   width: 1000px;
 }
 .article-new-frame8{
+  margin-top: 40px;
+  width: 1000px;
+}
+.article-show-frame9{
   width: 1000px;
 }
 .make-article-procedure{
@@ -153,10 +157,22 @@ footer{
 .article-new-comment-design{                       /*コメント投稿部分のレイアウト*/
   border-bottom: 2px solid #f5f5f5;
 }
-.article-new-comment-layout{
-  display: flex;
-}
 
+.comment-title{
+  width: 610px;
+  margin: 0 auto;
+}
+.comment-field1{
+  text-align: center;
+}
+.comment-form{
+  width: 600px;
+  height: 250px;
+}
+.comment-form-btn{
+  width: 800px;
+  text-align:right;
+}
 
 
 /*以下、index.htmlのコード*/
@@ -284,12 +300,21 @@ footer{
   text-align:right;
 }
 
-.maypage-articles-index{
+.mypage-articles-index{
   width: 900px;
-  height: 40px;
+  height: 80px;
   display: flex;
 }
-
+.image-layout{
+  width: 100px;
+  height: 60px;
+  margin: 0 auto;
+}
+.mypage-layout-button{
+  width: 100px;
+  height: 80px;
+  margin: 0 auto;
+}
 
 /*profiles/show（詳細ページ）の記述*/
 .profile-show-frame1{                        /*詳細ページのユーザ情報大枠*/

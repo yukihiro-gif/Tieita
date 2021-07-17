@@ -36,19 +36,21 @@
     </div>
 
   </div>
-  </div>
   <% end %>
 </div>
 <div>
    <div class="mypage-title-frame"><h3 class="mypage-title">投稿記事一覧</h3></div>
 </div>
 <div class="container">
-    <% @users.each do |user| %>
+    <% @articles.each do |article| %>
     <div class="row mypage-articles-index">
-      <div><%= user.profile_image %></div>
-      <div></div>
-      <div><%= button_to "編集" , edit_article_path %></div>
-      <div><%= button_to "削除" , article_path, method: :delete %></div>
+      <div>
+        <div class="image-layout"><%= image_tag @user.profile_image, class: "image-layout" %></div>
+        <div><%= @user.profile_name %></div>
+      </div>
+      <div class="col-md-5"><%= article.title %></div>
+      <div class="mypage-layout-button"><%= button_to "編集" , edit_article_path %></div>
+      <div class="mypage-layout-button"><%= button_to "削除" , article_path, method: :delete %></div>
     </div>
     <% end %>
 </div>

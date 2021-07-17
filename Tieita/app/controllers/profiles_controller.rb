@@ -21,7 +21,8 @@ class ProfilesController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @users = User.all
+    @articles = @user.articles
+
   end
 
 private
