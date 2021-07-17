@@ -61,10 +61,10 @@ footer{
   text-align: center;
 }
 
-/*article/new.html.erbの記述*/
+/*article/show.html.erbの記述*/
 .article-new-frame1{                      /*投稿フォーム全体の枠組み*/
   width: 1000px;
-  height: 1200px;
+  height: 2000px;
 }
 .article-new-title{                       /*title部分のレイアウト*/
   width: 1000px;
@@ -100,6 +100,12 @@ footer{
 .article-new-frame6{                      /*投稿記事全体フォーム全体の枠組み*/
   width: 1000px;
   height: 700px;
+}
+.article-new-frame7{
+  width: 1000px;
+}
+.article-new-frame8{
+  width: 1000px;
 }
 .make-article-procedure{
   width: 100%;
@@ -143,6 +149,15 @@ footer{
 .form-button{
   text-align: center;
 }
+
+.article-new-comment-design{                       /*コメント投稿部分のレイアウト*/
+  border-bottom: 2px solid #f5f5f5;
+}
+.article-new-comment-layout{
+  display: flex;
+}
+
+
 
 /*以下、index.htmlのコード*/
 .article-form{

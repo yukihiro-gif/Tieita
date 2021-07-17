@@ -61,7 +61,37 @@
         </div>
       </div>
 
+    </div>
+  </div>
+  <div class="row article-new-frame7">
+    <div><h3>コメント</h3></div>
+    <div>
+      <%= form_with(model:[@article, @post_comment], local: true) do |f| %>
+        <%= f.text_area :comment, class: "comment-form" %>
+        <%= f.submit "コメント投稿", class: "comment-form-btn" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row article-new-frame8">
+    <div style="background-color:#f5f5f5;">
+
+      <div class="article-new-comment-design"><h3>コメント一覧</h3></div>
+      <div class="article-new-comment-layout">
+        <% @post_comments.each do |post_comment|%>
+        <div>
+          <div><%= @user.profile_image %></div>
+          <div><%= @user.profile_name %></div>
+        </div>
+        <div>
+          <div><p><%= post_comment.comment %></p></div>
+        </div>
+
+        <% end %>
+      </div>
 
     </div>
   </div>
+
+
+
 </div>
