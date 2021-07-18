@@ -85,7 +85,7 @@
           <div><%= @user.profile_name %></div>
         </div>
         <div>
-          <div><p><%= post_comment.comment %></p></div>
+          <div><p><%=safe_join(post_comment.comment.split("\n"),tag(:br))%></p></div>
         </div>
       </div>
       <% end %>

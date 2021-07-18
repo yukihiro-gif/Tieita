@@ -48,7 +48,7 @@
         <div class="image-layout"><%= image_tag @user.profile_image, class: "image-layout" %></div>
         <div><%= @user.profile_name %></div>
       </div>
-      <div class="col-md-5"><%= article.title %></div>
+      <div class="col-md-5 mypage-article-title"><%= link_to article.title, article_path  %></div>
       <div class="mypage-layout-button"><%= button_to "編集" , edit_article_path %></div>
       <div class="mypage-layout-button"><%= button_to "削除" , article_path, method: :delete %></div>
     </div>

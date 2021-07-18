@@ -25,7 +25,7 @@
     <% @user.articles.each do |article| %>
     <div class="profile-show-articles">
     <tr>
-      <td><p class="profile-show-article-title"><%= article.title %></p></td>
+      <td><p class="profile-show-article-title"><%= link_to article.title, article_path(article) %></p></td>
 　　<% if @user = current_user %>
 　　  <td>
 　　    <div class="profile-show-form">
