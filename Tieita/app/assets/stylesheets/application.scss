@@ -45,7 +45,8 @@
   height: 50px;
 }
 .header-box{                              /*header内の要素のデザイン*/
-  width: 200px;
+  width: 250px;
+  display: flex;
 }
 
 .login_field{
@@ -131,6 +132,13 @@ footer{
   height: 160px;
   padding-left: 20px;
 }
+.article-show-favorite-frame{             /*投稿記事下部ーいいね部分のレイアウト*/
+  display: flex;
+  margin-left: auto;
+}
+.article-show-favorite-text{
+  padding-left: 20px;
+}
 .form-label{                              /*投稿フォーム（記事）のレイアウト*/
   width: 650px;
   height: 140px;
@@ -155,6 +163,10 @@ footer{
 }
 
 .article-new-comment-design{                       /*コメント投稿部分のレイアウト*/
+  border-bottom: 2px solid #f5f5f5;
+  display: flex;
+}
+.article-new-comment-design2{                       /*コメント投稿部分のレイアウト*/
   border-bottom: 2px solid #f5f5f5;
 }
 
@@ -343,7 +355,6 @@ footer{
   height: 150px;
   border: 2px solid #d3d3d3;
   font-size: 20px;
-  line-height: 150px;
 }
 .profile-show-introduction{
   width: 500px;

@@ -3,7 +3,7 @@
   <div class="article-new-title">『<%= @article.title %>』</div>
   <div class="row article-new-frame2">
     <div class="article-new-frame3">
-      <%= @article.user.profile_image %>
+      <!--あとでarticle用imageを挿入-->
     </div>
     <div class="article-new-frame4">
       <div class="article-new-frame5">
@@ -62,6 +62,22 @@
       </div>
 
     </div>
+
+    <div class="article-show-favorite-frame">
+      <p>この記事は役に立ちましたか？</p>
+      <div class="article-show-favorite-text">
+        <% if @article.favorited_by?(current_user) %>
+          <%= link_to article_favorites_path(@article), method: :delete do %>
+             ★いいね（<%= @article.favorites.count %>件のユーザが役に立ったと回答しています）
+          <% end %>
+        <% else %>
+          <%= link_to article_favorites_path(@article), method: :post do %>
+             ☆いいね（<%= @article.favorites.count %>件のユーザが役に立ったと回答しています）
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
   <div class="article-new-frame7">
     <div class="comment-title"><h3>コメント</h3></div>
@@ -77,9 +93,12 @@
   <div class="row article-new-frame8">
     <div class="article-show-frame9">
 
-      <div class="article-new-comment-design"><h3>コメント一覧</h3></div>
-      <% @post_comments.each do |post_comment|%>
       <div class="article-new-comment-design">
+        <h3>コメント一覧</h3>
+        <h3>（<%= @post_comments.count %>件）</h3>
+      </div>
+      <% @post_comments.each do |post_comment|%>
+      <div class="article-new-comment-design2">
         <div>
           <div><%= @user.profile_image %></div>
           <div><%= @user.profile_name %></div>

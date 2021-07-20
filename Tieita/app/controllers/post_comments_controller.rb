@@ -5,7 +5,7 @@ class PostCommentsController < ApplicationController
     comment.user_id = current_user.id
     comment.article_id = article.id
     comment.save
-    redirect_to ""
+    redirect_to article_path(article)
   end
 
   def destroy

@@ -17,6 +17,7 @@
       </div>
     </div>
       <% if @user = current_user %>
+       <div class="profile-show-edit-btn"><%= button_to "投稿記事作成", new_article_path, method: :get %></div>
        <div class="profile-show-edit-btn"><%= button_to "プロフィール編集", edit_profile_path, method: :get %></div>
       <% end %>
   </div>
@@ -29,7 +30,7 @@
 　　<% if @user = current_user %>
 　　  <td>
 　　    <div class="profile-show-form">
-　　     <%= button_to "記事編集", edit_article_path, method: :get, local: true, class: "profile-show-btn" %>
+　　     <%= button_to "記事編集", edit_article_path(article), method: :get, local: true, class: "profile-show-btn" %>
 　　    </div>
 　　  </td>
 　　  <td>

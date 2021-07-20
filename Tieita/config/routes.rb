@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get '/search' => 'searches#search'
   get 'profiles/new'
   resources :profiles
   devise_for :users
   root to: 'homes#top'
   resources :articles, only:[:new, :index, :show, :edit, :create, :update, :destroy] do
     resources :post_comments, only:[:create, :destroy]
+    resource :favorites, only:[:create, :destroy]
   end
   get 'profiles/:id/edit' => 'profiles#edit'
   get 'profiles/:id/show' => 'profiles#show'

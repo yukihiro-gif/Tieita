@@ -11,13 +11,18 @@
   <body>
     <header style="background-color: #a9a9a9;">
       <div class="container">
-        <div class="header-layout">
+        <div class="row header-layout">
           <% if user_signed_in? %>
-           <div class="header-box">logo</div>
-           <div class="header-box">検索用タブ</div>
-           <div class="header-box">作成例</div>
-           <div class="header-box"><%= button_to "My page", profile_path(current_user) , method: :get %></div>
-           <div class="header-box"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+           <div class="col-md-2 header-box">logo</div>
+           <div class="col-md-3 header-box">
+             <%= form_with url:search_path, method: :get, local: true do |f| %>
+               <div><%= f.text_field :keyword ,value: @keyword %></div>
+               <div><%= f.submit "検索"%></div>
+             <% end %>
+           </div>
+           <div class="col-md-2 header-box">作成例</div>
+           <div class="col-md-2 header-box"><%= button_to "My page", profile_path(current_user) , method: :get %></div>
+           <div class="col-md-2 header-box"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></div>
           <% else %>
            <div class="header-box">logo</div>
            <div class="header-box"><%= button_to "About", homes_about_path %></div><!--あとでリンク先変更-->
