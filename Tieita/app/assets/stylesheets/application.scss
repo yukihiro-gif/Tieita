@@ -23,7 +23,7 @@
 
 /*homes/topのレイアウト*/
 .top-background-image{
- background-image: image-url(<%= asset_path "5048383.png" %>);
+ background-color:#ffdab9;
  height: 800px;
  display: none;
 }
@@ -40,6 +40,13 @@
  background-color: #ffe4e1;
  display: none;
 }
+
+
+/*aboutページのレイアウト*/
+.container {
+  height: 500px; /* ここの高さはいくつでも構いません */
+}
+
 
 
 /*以下、headerのレイアウト*/
