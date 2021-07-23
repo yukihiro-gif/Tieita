@@ -18,6 +18,24 @@
 //= require turbolinks
 //= require_tree .
 
+//topページのアニメーション
+
+
+
+
+
+$(function(){
+  $(".top-background-image").stop(true).animate({'width': 'toggle'}, "9000", function(){
+    $(".top-background-left").slideDown("6000", function(){
+      $(".top-background-center").slideDown("6000", function(){
+        $(".top-background-right").slideDown("6000");
+      });
+    });
+  });
+
+
+});
+
 
 $('#tab-contents .tab[id != "tab1"]').hide();
 

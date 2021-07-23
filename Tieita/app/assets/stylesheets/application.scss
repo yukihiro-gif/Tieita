@@ -21,6 +21,27 @@
   box-sizing: border-box; /*リセットcssの記述*/
 }
 
+/*homes/topのレイアウト*/
+.top-background-image{
+ background-image: image-url(<%= asset_path "5048383.png" %>);
+ height: 800px;
+ display: none;
+}
+.top-background-left{
+ background-color:#ffa500;
+ height: 800px;
+ display: none;
+}
+.top-background-center{
+ background-color:#ffdab9;
+ display: none;
+}
+.top-background-right{
+ background-color: #ffe4e1;
+ display: none;
+}
+
+
 /*以下、headerのレイアウト*/
 .header-layout{ /*headerのデザイン*/
   display: flex;
