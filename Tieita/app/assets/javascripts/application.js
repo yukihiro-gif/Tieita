@@ -29,3 +29,10 @@ $('#tab-menu a').on('click', function(event) {
   event.preventDefault();
 });
 
+$(document).ready(function () {
+  $('.jquery').on('click', function(){
+    $(this).css('color','red');
+  });
+});
+
+$('#like-<%= @article.id %>').html("<%= j(render partial: 'likes/like', locals: { article: @article }) %>");

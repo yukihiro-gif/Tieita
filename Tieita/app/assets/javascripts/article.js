@@ -7,3 +7,6 @@ $("#tab-menu a").on('click', function(event){
   $((this).after("href")).show();
   event.preventDefault();
 })
+
+
+$('article-likes-btn').html();
