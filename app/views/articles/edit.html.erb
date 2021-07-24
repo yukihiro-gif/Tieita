@@ -1,0 +1,51 @@
+<div class="container article-new-frame1">
+  <%= form_with model: @article, url: articles_path, method: :post, local: true do |f| %>
+  <div class="row article-new-title">
+
+  </div>
+  <div class="row article-new-frame2">
+    <div class="article-new-frame4">
+      <div class="col-md-6 " style="background-color:#d3d3d3;">
+       <p class="label-layout-new">タイトル</p>
+       <%= f.text_area :title, placeholder: "（例）美味しいカレーの作り方" %>
+      </div>
+      <div class="col-md-6 " style="background-color:#c0c0c0;">
+        <p class="label-layout-new">こんな場面で役立ちます！</p>
+        <%= f.text_area :situation,placeholder: "（例）お家で本格カレーを作る時に役立ちます" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row article-new-frame6">
+    <div class="make-article-procedure" style="background-color:#f5f5f5;">
+      <div><h3>手順</h3></div>
+      <div class="article-contents">
+        <div class="col-md-3 article-image"><%= f.file_field :article_image1 %></div>
+        <div class="col-md-9 article-text-field">
+          <%= f.text_area :description1, placeholder: "（例）野菜を切る", class: "form-label" %>
+        </div>
+      </div>
+      <div class="article-contents">
+        <div class="col-md-3 article-image"><%= f.file_field :article_image2 %></div>
+        <div class="col-md-9 article-text-field">
+          <%= f.text_area :description2, placeholder: "（例）肉を炒める", class: "form-label" %>
+        </div>
+      </div>
+      <div class="article-contents">
+        <div class="col-md-3 article-image"><%= f.file_field :article_image3 %></div>
+        <div class="col-md-9 article-text-field">
+          <%= f.text_area :description3, placeholder: "（例）しっかり煮込む", class: "form-label" %>
+        </div>
+      </div>
+      <div class="article-contents">
+        <div class="col-md-3 article-image"><%= f.file_field :article_image4 %></div>
+        <div class="col-md-9 article-text-field" >
+          <%= f.text_area :description4, placeholder: "（例）おしゃれに盛り付けて完成！", class: "form-label" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <%= f.submit "記事を投稿", class: "form-button"  %>
+  <% end %>
+</div>
