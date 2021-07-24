@@ -14,22 +14,21 @@ ActiveRecord::Schema.define(version: 2021_07_22_020707) do
 
   create_table "articles", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "title", default: "", null: false
-    t.text "situation", default: "", null: false
-    t.string "article_image1", default: "", null: false
-    t.text "description1", default: "", null: false
-    t.string "article_image2", default: "", null: false
-    t.text "description2", default: "", null: false
-    t.string "article_image3", default: "", null: false
-    t.text "description3", default: "", null: false
-    t.string "article_image4", default: "", null: false
-    t.text "description4", default: "", null: false
+    t.string "title", null: false
+    t.text "situation", null: false
+    t.string "article_image1", null: false
+    t.text "description1", null: false
+    t.string "article_image2", null: false
+    t.text "description2", null: false
+    t.string "article_image3", null: false
+    t.text "description3", null: false
+    t.string "article_image4", null: false
+    t.text "description4", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,27 +47,22 @@ ActiveRecord::Schema.define(version: 2021_07_22_020707) do
   create_table "post_comments", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "article_id", null: false
-    t.text "comment", default: "", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "searches", force: :cascade do |t|
+    t.text "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "name_sei", default: "", null: false
-    t.string "name_mei", default: "", null: false
-    t.string "name_kana_sei", default: "", null: false
-    t.string "name_kana_mei", default: "", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
+    t.string "name_sei", null: false
+    t.string "name_mei", null: false
+    t.string "name_kana_sei", null: false
+    t.string "name_kana_mei", null: false
     t.integer "tel", null: false
-    t.string "profile_name", default: "", null: false
-    t.string "profile_image", default: "", null: false
-    t.text "introduction", default: "", null: false
+    t.string "profile_name", null: false
+    t.string "profile_image", null: false
+    t.text "introduction", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
