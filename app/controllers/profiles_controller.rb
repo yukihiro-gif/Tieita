@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
-
   def new
-    @user = User.new()
+    @user = User.new
     @users = User.all
   end
 
@@ -22,11 +21,11 @@ class ProfilesController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @articles = @user.articles
-
   end
 
-private
- def params_user
-   params.require(:user).permit(:profile_image, :profile_name, :introduction, :tel, :email, :password)
- end
+  private
+
+  def params_user
+    params.require(:user).permit(:profile_image, :profile_name, :introduction, :tel, :email, :password)
+  end
 end

@@ -2,12 +2,22 @@
   <div class="row article-index-layout">
     <div class="col-md-2" style="background-color:#dcdcdc">
       <h4>サービス</h4>
-      <p>・ランキング</p>
+      <p><%= link_to "ランキング", rankings_index_path %></p>
       <p>・殿堂入り</p>
       <p>お気に入りユーザ登録</p>
       <p>お気に入りユーザの新着記事</p>
     </div>
-    <div class="col-md-7" style="background-color:#c0c0c0"></div>
+    <div class="col-md-7" style="background-color:#c0c0c0">
+      <div class="container image-slider">
+      <div id="theTarget">
+        <div class="articles-top-image1"></div>
+        <div class="articles-top-image2"></div>
+        <div class="articles-top-image3"></div>
+        <div class="articles-top-image4"></div>
+        <div class="articles-top-image5"></div>
+      </div>
+    </div>
+    </div>
     <div class="col-md-3" style="background-color:#d3d3d3"></div>
   </div>
   <div class="row1">
@@ -23,14 +33,35 @@
             <div id="tab1" class="tab">
                 <div><%= article.title %></div>
                 <div><%= article.situation %></div>
-             <% if current_user %>
+             <% if article.user.id == current_user.id %>
                 <div><%= button_to "編集", new_article_path(article) %></div> <!--あとでリンク先変更-->
                 <div><%= button_to "削除", new_article_path %></div>
              <% end %>
             </div>
+            <div id="tab2" class="tab">
+                <div><%= article.title %></div>
+                <div><%= article.situation %></div>
+             <% if article.user.id == current_user.id %>
+                <div><%= button_to "編集", new_article_path(article) %></div> <!--あとでリンク先変更-->
+                <div><%= button_to "削除", new_article_path %></div>
+             <% end %>
+            </div>
+            <div id="tab3" class="tab">
+                <div><%= article.title %></div>
+                <div><%= article.situation %></div>
+             <% if article.user.id == current_user.id %>
+                <div><%= button_to "編集", new_article_path(article) %></div> <!--あとでリンク先変更-->
+                <div><%= button_to "削除", new_article_path %></div>
+             <% end %>
+            </div>
+
+
+
+
+
+
             <% end %>
         </div>
     </div>
   </div>
 </div>
-

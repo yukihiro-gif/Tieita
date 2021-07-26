@@ -16,24 +16,28 @@
         </tr>
       </div>
     </div>
-      <% if @user = current_user %>
+      <% if @user == current_user %>
        <div class="profile-show-edit-btn"><%= button_to "投稿記事作成", new_article_path, method: :get %></div>
        <div class="profile-show-edit-btn"><%= button_to "プロフィール編集", edit_profile_path, method: :get %></div>
       <% end %>
   </div>
   <div><h3 class="profile-show-heading">投稿記事一覧</h3></div>
   <div class="row">
-    <% @user.articles.each do |article| %>
-    <div class="profile-show-articles">
+    <% @articles.each do |article| %>
+    <div class="col profile-show-articles">
     <tr>
-      <td><p class="profile-show-article-title"><%= link_to article.title, article_path(article) %></p></td>
-　　<% if @user = current_user %>
-　　  <td>
+      <td><p class="col-md-6 profile-show-article-title"><%= link_to article.title, article_path(article) %></p></td>
+      <div class="col-md-2">
+        <td>いいねされた数：<%= article.favorites.count%></td>
+        <td>コメント数：<%= article.post_comments.count %></td>
+      </div>
+　　<% if @user == current_user %>
+　　  <td class="col-md-1">
 　　    <div class="profile-show-form">
 　　     <%= button_to "記事編集", edit_article_path(article), method: :get, local: true, class: "profile-show-btn" %>
 　　    </div>
 　　  </td>
-　　  <td>
+　　  <td class="col-md-1">
 　　    <div class="profile-show-form">
 　　     <%= button_to "記事削除", article_path, method: :delete, local: true, class: "profile-show-btn" %>
 　　    </div>

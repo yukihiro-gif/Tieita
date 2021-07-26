@@ -13,19 +13,24 @@
       <div class="container">
         <div class="row header-layout">
           <% if user_signed_in? %>
-           <div class="col-md-2 header-box">logo</div>
-           <div class="col-md-3 header-box">
+           <div class="col-md-2 header-box">
+             <%= link_to "Tieita", articles_path %>
+           </div>
+           <div class="col-md-5 header-search-box">
              <%= form_with url:search_path, method: :get, local: true do |f| %>
-               <div><%= f.text_field :keyword ,value: @keyword %></div>
-               <div><%= f.submit "検索"%></div>
+               <div class="header-search-field"><%= f.text_field :keyword ,value: @keyword, class: "header-search-form" %></div>
+               <div class="header-search-btn"><%= f.submit "検索"%></div>
              <% end %>
            </div>
-           <div class="col-md-2 header-box">作成例</div>
-           <div class="col-md-2 header-box"><%= button_to "My page", profile_path(current_user) , method: :get %></div>
-           <div class="col-md-2 header-box"><%= button_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+           <div class="col-md-2 header-box">
+              <i class="fas fa-sign-out-alt"><%= link_to "My page", profile_path(current_user) , method: :get %></i>
+            </div>
+           <div class="col-md-2 header-box">
+             <i class="fas fa-sign-out-alt"> <%= link_to "logout", destroy_user_session_path, method: :delete %></i>
+           </div>
           <% else %>
-           <div class="header-box">logo</div>
-           <div class="header-box"><%= button_to "About", homes_about_path %></div><!--あとでリンク先変更-->
+           <div class="header-box">Tieita</div>
+           <div class="header-box"><%= button_to "About", homes_about_path %></div>
            <div class="header-box"><%= button_to "新規登録", new_user_registration_path, method: :get %></div>
            <div class="header-box"><%= button_to "ログイン", new_user_session_path, method: :get  %></div>
           <% end %>
@@ -33,6 +38,7 @@
       </div>
     </header>
     <%= yield %>
+
     <footer style="background-color: #a9a9a9;">ちえ板</footer>
   </body>
 </html>

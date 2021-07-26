@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :profiles
   devise_for :users
   root to: 'homes#top'
-  resources :articles, only:[:new, :index, :show, :edit, :create, :update, :destroy] do
-    resources :post_comments, only:[:create, :destroy]
-    resource :favorites, only:[:create, :destroy]
-    resource :likes, only:[:create, :destroy]
+  resources :articles, only: [:new, :index, :show, :edit, :create, :update, :destroy] do
+    resources :post_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
   end
   get 'homes/top'
   get 'homes/about'
@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get 'likes/create'
-  end
+  get 'rankings/index'
+end
