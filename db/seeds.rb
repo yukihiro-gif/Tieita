@@ -32,7 +32,7 @@ User.create!(
   name_kana_mei: 'ハナコ',
   tel: '09012345678',
   profile_name: 'ハナ',
-  profile_image: File.open('./app/assets/images/5048383_m.jpg'),
+  profile_image_id: File.open('./app/assets/images/5048383_m.jpg'),
   introduction: 'スポーツと映画鑑賞が趣味です。',
   age: '20',
   job: '花屋',

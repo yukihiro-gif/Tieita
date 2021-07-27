@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :name_kana_mei,      null: false
       t.integer :tel,               null: false
       t.string :profile_name,       null: false
-      t.string :profile_image,      null: false
+      t.string :profile_image_id,   null: false
       t.text :introduction,         null: false
       t.integer :age
       t.string :job

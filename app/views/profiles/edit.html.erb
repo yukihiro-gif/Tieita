@@ -26,7 +26,7 @@
     </div>
     <div class="mypage-layout3" style="background-color:#d3d3d3;">
       <div><p class="personal-label">プロフィール画像</p></div>
-      <div><%= f.file_field :profile_image, class: "profile-form" %></div>
+      <div><%= f.attachment_field :profile_image, class: "profile-form" %></div>
     </div>
     <div class="mypage-layout4" style="background-color:#f5f5f5;">
       <div><p class="personal-label">introduction</p></div>
@@ -45,7 +45,7 @@
     <% @articles.each do |article| %>
     <div class="row mypage-articles-index">
       <div>
-        <div class="image-layout"><%= image_tag @user.profile_image, class: "image-layout" %></div>
+        <div class="image-layout"></div>
         <div><%= @user.profile_name %></div>
       </div>
       <div class="col-md-5 mypage-article-title"><%= link_to article.title, article_path  %></div>

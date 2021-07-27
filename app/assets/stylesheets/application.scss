@@ -289,6 +289,7 @@ footer{
   margin-top: 20px;
 
 }
+
 .search-table{
   width: 800px;
 }
@@ -341,8 +342,13 @@ footer{
 }
 
 /*画像スライダー用記述*/
+.slider{
+ display: none;
+
+}
 .image-slider{
  height: 400px;
+ display: block; /*slick-initializedが付与されたら表示*/
 }
 .articles-top-image1{
   background-image: image-url("/assets/5048383_m.jpg");

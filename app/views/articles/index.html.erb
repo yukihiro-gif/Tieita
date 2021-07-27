@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row article-index-layout">
     <div class="col-md-11 mx-auto" style="background-color:#ffdab9">
-      <div class="container image-slider">
+      <div class="container slider image-slider">
       <div id="theTarget">
         <div class="articles-top-image1"></div>
         <div class="articles-top-image2"></div>
@@ -15,7 +15,12 @@
   <div class="row">
     <div class="col-md-11 mx-auto article-main-layout" style="background-color:#ffdab9">
     <div class="col-md-9 mx-auto article-main">
+      <div class="article-all-layout">
       <h3>投稿記事一覧</h3>
+      <div id="sort-btn">
+        <%= render 'searches/sort', article: @article %>
+      </div>
+      </div>
       <table>
         <thead>
           <tr class="table-around-border">
@@ -36,11 +41,13 @@
       </table>
     </div>
     <div class="col-md-2 mx-auto article-sidebar">
+      <div>
       <h4>メニュー</h4>
-      <div id="sort-btn">
-        <%= render 'searches/sort', article: @article %>
-      </div>
       <div>・<%= link_to "ランキング", rankings_index_path %></div>
+      </div>
+      <div>
+        <h6>お気に入りユーザ</h6>
+      </div>
     </div>
     </div>
   </div>

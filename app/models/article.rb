@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+
   #『いいね』機能のインスタンスメソッド
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
