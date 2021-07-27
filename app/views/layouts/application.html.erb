@@ -16,10 +16,11 @@
            <div class="col-md-2 header-box">
              <%= link_to "Tieita", articles_path %>
            </div>
-           <div class="col-md-2 header-box">
+           <div class="col-md-5"></div>
+           <div class="col-md-1 header-box">
               <i class="fas fa-sign-out-alt"><%= link_to "My page", profile_path(current_user) , method: :get %></i>
             </div>
-           <div class="col-md-2 header-box">
+           <div class="col-md-1 header-box">
              <i class="fas fa-sign-out-alt"> <%= link_to "logout", destroy_user_session_path, method: :delete %></i>
            </div>
           <% else %>
@@ -52,7 +53,7 @@
         </div>
       </div>
     </header>
-    <!--以下、flash message用の-->
+    <!--以下、flash message用のコード-->
     <% if flash.any? %>
       <script type="text/javascript">
         <% flash.each do |key, value| %>
@@ -62,7 +63,7 @@
         <% end %>
       </script>
     <% end %>
-    
+
     <%= yield %>
 
     <footer style="background-color: #a9a9a9;">ちえ板</footer>
