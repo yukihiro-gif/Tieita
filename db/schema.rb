@@ -16,14 +16,14 @@ ActiveRecord::Schema.define(version: 2021_07_22_020707) do
     t.integer "user_id", null: false
     t.string "title", null: false
     t.text "situation", null: false
-    t.string "article_image1", null: false
+    t.string "article_image1"
     t.text "description1", null: false
-    t.string "article_image2", null: false
-    t.text "description2", null: false
-    t.string "article_image3", null: false
-    t.text "description3", null: false
-    t.string "article_image4", null: false
-    t.text "description4", null: false
+    t.string "article_image2"
+    t.text "description2"
+    t.string "article_image3"
+    t.text "description3"
+    t.string "article_image4"
+    t.text "description4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 2021_07_22_020707) do
     t.string "profile_name", null: false
     t.string "profile_image", null: false
     t.text "introduction", null: false
+    t.integer "age"
+    t.string "job"
+    t.string "from"
+    t.string "hobby"
+    t.text "like"
+    t.text "dislike"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

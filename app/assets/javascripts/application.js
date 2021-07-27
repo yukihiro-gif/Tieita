@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require toastr
 //= require_tree .
 
 
@@ -59,12 +60,3 @@ $(document).ready(function () {
 
 
 //ariticles/index.html.erbページのタブ作成
-$('#tab-contents .tab[id != "tab1"]').hide();
-
-$('#tab-menu a').on('click', function(event) {
-  $("#tab-contents .tab").hide();
-  $("#tab-menu .active").removeClass("active");
-  $(this).addClass("active");
-  $($(this).attr("href")).show();
-  event.preventDefault();
-});

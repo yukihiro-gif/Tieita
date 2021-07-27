@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/search' => 'searches#search'
+  get '/sort' => 'searches#sort'
   get 'profiles/new'
   resources :profiles
   devise_for :users

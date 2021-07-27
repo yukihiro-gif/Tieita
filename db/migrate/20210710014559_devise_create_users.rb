@@ -15,6 +15,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :profile_name,       null: false
       t.string :profile_image,      null: false
       t.text :introduction,         null: false
+      t.integer :age
+      t.string :job
+      t.string :from
+      t.string :hobby
+      t.text :like
+      t.text :dislike
 
       ## Recoverable
       t.string   :reset_password_token

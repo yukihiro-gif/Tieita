@@ -7,3 +7,24 @@
         <div class="image" style="background-image: url("/assets/gahag-0119100892.jpg")"></div>
       </div>
     </div>
+
+<div class="wrap">
+        <ul id="tab-menu">
+            <li><a href="#tab1" class="active">テキスト１</a></li>
+            <li><a href="#tab2" class="">テキスト２</a></li>
+            <li><a href="#tab3" class="">テキスト３</a></li>
+            <li><a href="#tab4" class="">テキスト４</a></li>
+        </ul>
+        <div id="tab-contents">
+            <% @articles.each do |article| %>
+            <div id="tab1" class="tab">
+                <div><%= article.title %></div>
+                <div><%= article.situation %></div>
+             <% if article.user.id == current_user.id %>
+                <div><%= button_to "編集", new_article_path(article) %></div> <!--あとでリンク先変更-->
+                <div><%= button_to "削除", new_article_path %></div>
+             <% end %>
+            </div>
+            <% end %>
+        </div>
+    </div>

@@ -1,12 +1,35 @@
 <div class="container">
   <div class="row">
-    <% @articles.each do |article| %>
-    <div class="col-md-4">
-      <div><%= article.user.profile_image %></div>
-      <div><%= link_to article.user.profile_name, profile_path(article.user.id) %></div>
+  <div class="col-md-10 mx-auto article-main">
+      <h3>検索結果</h3>
+      <table class="search-table">
+        <thead>
+          <tr class="table-around-border">
+             <th class="col-md-2">投稿者</th>
+             <th class="col-md-4">タイトル</th>
+             <th class="col-md-4">シチュエーション</th>
+         </tr>
+        </thead>
+        <tbody>
+          <% @articles.each do |article| %>
+          <% if @articles != nil %>
+         <tr class="table-around-border">
+             <td class="col-md-2">
+               <%= article.user.profile_image %>
+               <%= link_to article.user.profile_name, profile_path(article.user.id) %>
+             </td>
+             <td class="col-md-4"><%= link_to article.title, article_path(article) %></td>
+             <td class="col-md-4"><%= article.situation%></td>
+         </tr>
+         <% else %>
+          <tr>
+            <td class="col-md-10">投稿データはありません</td>
+          </tr>
+         <% end %>
+         <% end %>
+        </tbody>
+      </table>
     </div>
-    <div class="col-md-4"><%= link_to article.title, article_path(article) %></div>
-    <% end %>
-  </div>
+    </div>
 
 </div>

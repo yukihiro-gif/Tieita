@@ -81,13 +81,8 @@
 
   <div class="article-new-frame7">
     <div class="comment-title"><h3>コメント</h3></div>
-    <div>
-      <%= form_with(model:[@article, @post_comment], local: true) do |f| %>
-        <div>
-          <div class="comment-field1"><%= f.text_area :comment, class: "comment-form" %></div>
-        </div>
-        <div class="comment-form-btn"><%= f.submit "コメント投稿" %></div>
-      <% end %>
+    <div id="comment-btn">
+      <%= render 'post_comments/comment', article: @article, post_comment: @post_comment %>
     </div>
   </div>
   <div class="row article-new-frame8">

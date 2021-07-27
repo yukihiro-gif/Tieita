@@ -1,0 +1,7 @@
+<%= form_with model: article, url: sort_path, method: :get do |f| %>
+  <%= f.select :keyword, [ ['投稿が新しい順', 'new'],
+                           ['投稿が古い順', 'old'],
+                           ['いいねが多い順', 'likes'],
+                           ['いいねが少ない順', 'dislikes'],] %>
+  <%= f.submit "ソート" %>
+  <% end %>

@@ -1,0 +1,6 @@
+<%= form_with(model:[article, post_comment], remote: true) do |f| %>
+<div>
+  <div class="comment-field1"><%= f.text_area :comment, class: "comment-form" %></div>
+</div>
+<div class="comment-form-btn"><%= f.submit "コメント投稿" %></div>
+<% end %>

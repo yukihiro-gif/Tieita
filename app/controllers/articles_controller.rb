@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
     article.user_id = current_user.id
 
     if article.save
-      redirect_to ""
+      redirect_to "", notice: "You have updated book successfully."
     else
       redirect_to new_article_path
     end

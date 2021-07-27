@@ -16,7 +16,13 @@ User.create!(
   tel: '09012345678',
   profile_name: 'タッチ',
   profile_image: File.open('./app/assets/images/5048383_m.jpg'),
-  introduction: '前職は飲食店で働いていました。よろしくお願いします！'},
+  introduction: '前職は飲食店で働いていました。よろしくお願いします！',
+  age: '27',
+  job: 'サラリーマン',
+  from: '東京',
+  hobby: 'ランニング',
+  like: 'サッカー観戦',
+  dislike: '虫',},
 
   {email: 'bsyu11111@gmail.com',
   password: '111111',
@@ -27,7 +33,13 @@ User.create!(
   tel: '09012345678',
   profile_name: 'ハナ',
   profile_image: File.open('./app/assets/images/5048383_m.jpg'),
-  introduction: 'スポーツと映画鑑賞が趣味です。'},]
+  introduction: 'スポーツと映画鑑賞が趣味です。',
+  age: '20',
+  job: '花屋',
+  from: '千葉',
+  hobby: '映画鑑賞',
+  like: 'ランニング',
+  dislike: '虫',  },]
 )
 
 Article.create!(

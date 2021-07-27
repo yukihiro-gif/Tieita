@@ -1,13 +1,6 @@
-<div class="container1">
+<div class="container">
   <div class="row article-index-layout">
-    <div class="col-md-2" style="background-color:#dcdcdc">
-      <h4>サービス</h4>
-      <p><%= link_to "ランキング", rankings_index_path %></p>
-      <p>・殿堂入り</p>
-      <p>お気に入りユーザ登録</p>
-      <p>お気に入りユーザの新着記事</p>
-    </div>
-    <div class="col-md-7" style="background-color:#c0c0c0">
+    <div class="col-md-11 mx-auto" style="background-color:#ffdab9">
       <div class="container image-slider">
       <div id="theTarget">
         <div class="articles-top-image1"></div>
@@ -18,50 +11,37 @@
       </div>
     </div>
     </div>
-    <div class="col-md-3" style="background-color:#d3d3d3"></div>
   </div>
-  <div class="row1">
-    <div class="wrap">
-        <ul id="tab-menu">
-            <li><a href="#tab1" class="active">テキスト１</a></li>
-            <li><a href="#tab2" class="">テキスト２</a></li>
-            <li><a href="#tab3" class="">テキスト３</a></li>
-            <li><a href="#tab4" class="">テキスト４</a></li>
-        </ul>
-        <div id="tab-contents">
-            <% @articles.each do |article| %>
-            <div id="tab1" class="tab">
-                <div><%= article.title %></div>
-                <div><%= article.situation %></div>
-             <% if article.user.id == current_user.id %>
-                <div><%= button_to "編集", new_article_path(article) %></div> <!--あとでリンク先変更-->
-                <div><%= button_to "削除", new_article_path %></div>
-             <% end %>
-            </div>
-            <div id="tab2" class="tab">
-                <div><%= article.title %></div>
-                <div><%= article.situation %></div>
-             <% if article.user.id == current_user.id %>
-                <div><%= button_to "編集", new_article_path(article) %></div> <!--あとでリンク先変更-->
-                <div><%= button_to "削除", new_article_path %></div>
-             <% end %>
-            </div>
-            <div id="tab3" class="tab">
-                <div><%= article.title %></div>
-                <div><%= article.situation %></div>
-             <% if article.user.id == current_user.id %>
-                <div><%= button_to "編集", new_article_path(article) %></div> <!--あとでリンク先変更-->
-                <div><%= button_to "削除", new_article_path %></div>
-             <% end %>
-            </div>
-
-
-
-
-
-
-            <% end %>
-        </div>
+  <div class="row">
+    <div class="col-md-11 mx-auto article-main-layout" style="background-color:#ffdab9">
+    <div class="col-md-9 mx-auto article-main">
+      <h3>投稿記事一覧</h3>
+      <table>
+        <thead>
+          <tr class="table-around-border">
+             <th class="col-md-4">タイトル</th>
+             <th class="col-md-4">シチュエーション</th>
+             <th class="col-md-2">投稿者</th>
+         </tr>
+        </thead>
+        <tbody>
+          <% @articles.each do |article| %>
+         <tr class="table-around-border">
+             <td class="col-md-4"><%= link_to article.title, article_path(article) %></td>
+             <td class="col-md-4"><%= article.situation%></td>
+             <td class="col-md-2"><%= link_to article.user.profile_name, profile_path(article.user.id) %></td>
+         </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2 mx-auto article-sidebar">
+      <h4>メニュー</h4>
+      <div id="sort-btn">
+        <%= render 'searches/sort', article: @article %>
+      </div>
+      <div>・<%= link_to "ランキング", rankings_index_path %></div>
+    </div>
     </div>
   </div>
 </div>
