@@ -1,26 +1,30 @@
 <div><h3 class="profile-show-heading">プロフィール</h3></div>
 <div class="container">
   <div class="row profile-show-frame1">
-    <div class="profile-show-frame2"></div>
-    <div class="profile-show-frame3">
+    <div class="col-md-2 profile-show-frame2">
+      <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg' %>
+      <%= @user.profile_name %>
+    </div>
+    <div class="col-md-8 profile-show-frame3">
       <div class="profile-show-name">
-        <tr>
-          <th>プロフィール名:</th>
-          <td><%= @user.profile_name %></td>
-        </tr>
-      </div>
-      <div class="profile-show-name">
-       <tr>
-          <th>introduction:</th>
-          <td><%= @user.introduction %></td>
-        </tr>
+         <h4>自己紹介</h4>
+         <%= @user.introduction %>
       </div>
     </div>
-      <% if @user == current_user %>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8"></div>
+  </div>
+
+  <% if @user == current_user %>
        <div class="profile-show-edit-btn"><%= button_to "投稿記事作成", new_article_path, method: :get %></div>
        <div class="profile-show-edit-btn"><%= button_to "プロフィール編集", edit_profile_path, method: :get %></div>
       <% end %>
-  </div>
+
+
+
+
   <div><h3 class="profile-show-heading">投稿記事一覧</h3></div>
   <div class="row">
 

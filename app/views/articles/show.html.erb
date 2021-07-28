@@ -68,9 +68,8 @@
 　  <h3>この記事を書いたユーザ</h3>
   <div class="row article-new-frame5">
     <div class=" col-md-3 article-new-frame3">
-      <!--あとでarticle用imageを挿入-->
-      <%= attachment_image_tag @article.user, :profile_image, :fill, 300, 300, format: 'jpeg' %>
-      <%= link_to @article.user.profile_name, profile_path(@article.user.id) %>
+      <%= attachment_image_tag @article.user, :profile_image, :fill, 230, 120, format: 'jpeg', class: "profile-image-layout" %>
+      <%= link_to @article.user.profile_name, profile_path(@article.user.id), class: "profile-image-layout" %>
     </div>
     <div class="col-md-7 introduction-text">
       <tr>

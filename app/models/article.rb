@@ -22,7 +22,7 @@ class Article < ApplicationRecord
     elsif keyword == "old"
        Article.all.order(created_at: :ASC)
     elsif keyword == "likes"
-       find(Favorite.group(:user_id).order(Arel.sql('count(user_id) desc')).pluck(:user_id))
+       Article.find(Favorite.group(:article_id).order(Arel.sql('count(article_id) desc')).pluck(:article_id))
     elsif keyword == "dislikes"
        Article.find(Favorite.group(:article_id).order(Arel.sql('count(article_id) asc')).pluck(:article_id))
     end
