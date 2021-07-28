@@ -19,6 +19,13 @@
       <h3>投稿記事一覧</h3>
       <div id="sort-btn">
         <%= render 'searches/sort', article: @article %>
+        <hr>
+        <%= form_with model: @article, data: {remote: true} do |f| %>
+        input <%= f.text_field "test" %>
+        <% end %>
+  <%= link_to root_path, method: :post, remote: :true do %>
+      ☆いいね（<%#= @article.favorites.count %>件のユーザが役に立ったと回答しています）
+  <% end %>
       </div>
       </div>
       <table>
