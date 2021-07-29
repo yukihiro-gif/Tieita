@@ -106,6 +106,14 @@
 .login-item{
   text-align: left;                       /*項目のテキスト左寄せ*/
 }
+.registration-new-form{
+  width: 350px;
+}
+.login-table{
+  width: 350px;
+  margin: 0 auto;
+  text-align: right;
+}
 .login-itemA{
   width: 30px;
   height: 50px;
@@ -151,12 +159,14 @@ footer{
 /*article/show.html.erbの記述*/
 .article-new-frame1{                      /*投稿フォーム全体の枠組み*/
   background-color: #ffdab9;
+  padding: 20px 0;
 }
 .article-new-title{                       /*title部分のレイアウト*/
   width: 1000px;
   height: 80px;
   font-size: 30px;
   padding-top: 20px;
+  margin-left: 20px;
   text-align: left;
 }
 .article-new-frame2{                      /*image/著者・コメント/situation全体の枠組み*/
@@ -182,6 +192,7 @@ footer{
 }
 .article-new-frame3{
 /*image部分の枠組み*/
+  width: 150px;
   height: 150px;
   border: 2px solid #d3d3d3;
   margin: 0 0 0 auto;
@@ -192,7 +203,7 @@ footer{
   height: 150px;
   display: flex;
 }
-.article-new-frame5{                      /*著者・コメント/situation個別の枠組み*/
+.article-new-frame5{  /*著者・コメント/situation個別の枠組み*/
   height: 150px;
   margin: 40px auto 0;
 }
@@ -203,7 +214,7 @@ footer{
 .article-new-frame6{                      /*投稿記事全体フォーム全体の枠組み*/
   width: 1000px;
   height: 700px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .article-new-frame7{
   width: 1000px;
@@ -251,14 +262,14 @@ footer{
   font-size: 20px;
 }
 .form-label-situation{                    /*投稿部分のtitle/situationフォームのサイズ変更*/
-  width: 550px;
-  height: 100px;
+  width: 480px;
+  height: 30px;
   font-size: 20px;
 }
 .form-label-title{
-  width: 550px;
-  height: 80px;
-  font-size: 30px;
+  width: 480px;
+  height: 30px;
+  font-size: 20px;
 }
 .label-layout-new{
   height: 20px;
@@ -296,7 +307,29 @@ footer{
   border: 2px solid #d3d3d3;
   margin: 0 auto 0 0;
 }
-
+/*以下、article/new.html.erbのコード*/
+.new-article-layout1{
+  margin: 30px auto;
+}
+.box0-text{
+  text-align: right;
+}
+.box1-title{
+  width: 400px;
+  text-align: center;
+}
+.box1-font-size{
+  font-size: 50px;
+  margin: 0 0 0auto;
+}
+.box1-main{
+  margin: 0 auto;
+  display: flex;
+}
+.article-new-btn{
+  width: 900px;
+  text-align: right;
+}
 /*以下、index.htmlのコード*/
 .article-form{
   height: 400px;
@@ -415,7 +448,9 @@ footer{
   height: 400px;
 
 }
-
+.index-main-table{
+  width: 730px;
+}
 
 /*profiles/editの記述*/
 .mypage-title-frame{
@@ -501,7 +536,13 @@ footer{
   width: 100px;
   height: 80px;
   margin: 30px auto;
-
+}
+.edit-introduction-box{
+  width: 850px;
+  margin: 0 auto;
+}
+.profile-detail{
+  margin-left: 20px;
 }
 
 /*profiles/show（詳細ページ）の記述*/

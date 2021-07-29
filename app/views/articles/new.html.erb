@@ -1,53 +1,52 @@
 <div class="container article-new-frame1">
   <%= form_with model: @article, url: articles_path, method: :post, local: true do |f| %>
-  <div class="article-new-title">
-
-  </div>
-  <div class="row article-new-frame2">
-    <div class="article-new-frame3" style="background-color:#dcdcdc;">
-
+  <div class="row new-article-layout1">
+    <div class="col-md-4 box0-text">
+      <p class="label-layout-new">タイトル：</p>
+      <p class="label-layout-new">使う場面：</p>
     </div>
-    <div class="article-new-frame4">
-      <div class="article-new-frame5" style="background-color:#d3d3d3;">
-       <p class="label-layout-new">タイトル</p>
-       <%= f.text_area :title, placeholder: "（例）美味しいカレーの作り方", class: "form-label-title" %>
-      </div>
-      <div class="article-new-frame5" style="background-color:#c0c0c0;">
-        <p class="label-layout-new">シチュエーション</p>
-        <%= f.text_area :situation,placeholder: "（例）お家で本格カレーを作る時に役立ちます", class: "form-label-situation" %>
-      </div>
+    <div class="col-md-8">
+      <%= f.text_area :title, placeholder: "（例）美味しいカレーの作り方", class: "form-label-title" %>
+      <%= f.text_area :situation,placeholder: "（例）お家で本格カレーを作る時に役立ちます", class: "form-label-situation" %>
     </div>
   </div>
-  <div class="row article-new-frame6">
-    <div class="make-article-procedure" style="background-color:#f5f5f5;">
-
-      <div class="article-contents">
-        <div class="article-image"><%= f.file_field :article_image1 %></div>
-        <div class="article-text-field" style="background-color:#ffa500;">
-          <%= f.text_area :description1, placeholder: "（例）野菜を切る", class: "form-label" %>
-        </div>
+  <h3 class="box1-title">< 手順 ></h3>
+  <div class="row box1">
+    <div class="box1-main">
+      <div><h3  class="box1-font-size">①</h3></div>
+      <div>
+        <div><%= f.attachment_field :article_image1 %></div>
+        <div><%= f.text_area :description1, placeholder: "（例）野菜を切る", class: "form-label" %></div>
       </div>
-      <div class="article-contents">
-        <div class="article-image"><%= f.file_field :article_image2 %></div>
-        <div class="article-text-field" style="background-color:#ffa500;">
-          <%= f.text_area :description2, placeholder: "（例）肉を炒める", class: "form-label" %>
-        </div>
-      </div>
-      <div class="article-contents">
-        <div class="article-image"><%= f.file_field :article_image3 %></div>
-        <div class="article-text-field" style="background-color:#ffa500;">
-          <%= f.text_area :description3, placeholder: "（例）しっかり煮込む", class: "form-label" %>
-        </div>
-      </div>
-      <div class="article-contents">
-        <div class="article-image"><%= f.file_field :article_image4 %></div>
-        <div class="article-text-field" style="background-color:#ffa500;">
-          <%= f.text_area :description4, placeholder: "（例）おしゃれに盛り付けて完成！", class: "form-label" %>
-        </div>
-      </div>
-
     </div>
   </div>
-  <%= f.submit "記事を投稿", class: "form-button"  %>
+  <div class="row box1">
+    <div class="box1-main">
+      <div><h3  class="box1-font-size">②</h3></div>
+      <div>
+        <div><%= f.attachment_field :article_image2 %></div>
+        <div><%= f.text_area :description2, placeholder: "（例）肉を炒める", class: "form-label" %></div>
+      </div>
+    </div>
+  </div>
+  <div class="row box1">
+    <div class="box1-main">
+      <div><h3  class="box1-font-size">③</h3></div>
+      <div>
+        <div><%= f.attachment_field :article_image3 %></div>
+        <div><%= f.text_area :description3, placeholder: "（例）じっくり煮込む", class: "form-label" %></div>
+      </div>
+    </div>
+  </div>
+  <div class="row box1">
+    <div class="box1-main">
+      <div><h3  class="box1-font-size">④</h3></div>
+      <div>
+        <div><%= f.attachment_field :article_image4 %></div>
+        <div><%= f.text_area :description4, placeholder: "（例）皿におしゃれに盛り付けて完成", class: "form-label" %></div>
+      </div>
+    </div>
+  </div>
+  <div class="article-new-btn"><%= f.submit "記事を投稿" %></div>
   <% end %>
 </div>
