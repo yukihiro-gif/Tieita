@@ -14,46 +14,19 @@
   </div>
   <div class="row">
     <div class="col-md-11 mx-auto article-main-layout" style="background-color:#ffdab9">
-    <div class="col-md-9 mx-auto article-main">
-      <div class="article-all-layout">
-      <h3>投稿記事一覧</h3>
-      <div id="sort-btn">
-        <%= render 'searches/sort', article: @article %>
-        <hr>
-        <%= form_with model: @article, data: {remote: true} do |f| %>
-        input <%= f.text_field "test" %>
-        <% end %>
-  <%= link_to root_path, method: :post, remote: :true do %>
-      ☆いいね（<%#= @article.favorites.count %>件のユーザが役に立ったと回答しています）
-  <% end %>
-      </div>
-      </div>
-      <table>
-        <thead>
-          <tr class="table-around-border">
-             <th class="col-md-4">タイトル</th>
-             <th class="col-md-4">シチュエーション</th>
-             <th class="col-md-2">投稿者</th>
-         </tr>
-        </thead>
-        <tbody>
-          <% @articles.each do |article| %>
-         <tr class="table-around-border">
-             <td class="col-md-4"><%= link_to article.title, article_path(article) %></td>
-             <td class="col-md-4"><%= article.situation%></td>
-             <td class="col-md-2"><%= link_to article.user.profile_name, profile_path(article.user.id) %></td>
-         </tr>
-        <% end %>
-        </tbody>
-      </table>
+    <div class="col-md-9 mx-auto article-main"  id="sort-btn">
+      <%= render 'searches/sort', article: @article, articles: @articles %>
     </div>
-    <div class="col-md-2 mx-auto article-sidebar">
+    <div class="col-md-3 mx-auto article-sidebar">
       <div>
-      <h4>メニュー</h4>
+      <h6 class="col mx-auto">メニュー</h6>
       <div>・<%= link_to "ランキング", rankings_index_path %></div>
       </div>
-      <div>
-        <h6>お気に入りユーザ</h6>
+      <div class="likes-article-all">
+        <h6>お気に入り記事</h6>
+        <% @likes.each do |like| %>
+          <div><%= link_to like.article.title, article_path(like.article.id) %></div>
+        <% end %>
       </div>
     </div>
     </div>

@@ -32,7 +32,6 @@ User.create!(
   name_kana_mei: 'ハナコ',
   tel: '09012345678',
   profile_name: 'ハナ',
-  profile_image: File.open('./app/assets/images/5048383_m.jpg'),
   introduction: 'スポーツと映画鑑賞が趣味です。',
   age: '20',
   job: '花屋',
@@ -40,16 +39,15 @@ User.create!(
   hobby: '映画鑑賞',
   like: 'ランニング',
   dislike: '虫',  },
-  
+
   {email: 'bsyu22222@gmail.com',
-  password: '22222',
+  password: '222222',
   name_sei: '田中',
   name_mei: '悠一',
   name_kana_sei: 'タナカ',
   name_kana_mei: 'ユウイチ',
-  tel: '33333333333',
+  tel: '22222222222',
   profile_name: 'ゆーいち',
-  profile_image: File.open('./app/assets/images/5048383_m.jpg'),
   introduction: 'サーフィンとバスケットが趣味です。よろしくお願いします',
   age: '32',
   job: 'ラーメン屋店主',
@@ -57,7 +55,7 @@ User.create!(
   hobby: 'サーフィン',
   like: '野球観戦',
   dislike: '雷',},
-  
+
   {email: 'bsyu33333@gmail.com',
   password: '333333',
   name_sei: '山田',
@@ -66,7 +64,6 @@ User.create!(
   name_kana_mei: 'テツト',
   tel: '33333333333',
   profile_name: 'テツ',
-  profile_image: File.open('./app/assets/images/5048383_m.jpg'),
   introduction: '旅行が趣味です。家事の裏技が知りたいです',
   age: '22',
   job: 'サラリーマン',
@@ -74,7 +71,7 @@ User.create!(
   hobby: 'ランニング',
   like: 'サッカー観戦',
   dislike: '虫',},
-  
+
   {email: 'bsyu44444@gmail.com',
   password: '444444',
   name_sei: '坂本',
@@ -83,7 +80,6 @@ User.create!(
   name_kana_mei: 'マサト',
   tel: '44444444444',
   profile_name: 'まっちゃん',
-  profile_image: File.open('./app/assets/images/5048383_m.jpg'),
   introduction: 'まる',
   age: '32',
   job: 'サラリーマン',
@@ -117,7 +113,7 @@ Article.create!(
   description3: 'マジックリンをかける',
   article_image4: File.open('./app/assets/images/5048383_m.jpg'),
   description4: '水で流して終わり！'},
-  
+
   {user_id: '2',
   title: 'お風呂でカビを取る裏技',
   situation: 'お風呂に入る前に',
@@ -129,7 +125,7 @@ Article.create!(
   description3: 'マジックリンをかける',
   article_image4: File.open('./app/assets/images/5048383_m.jpg'),
   description4: '水で流して終わり！'},
-  
+
   {user_id: '2',
   title: 'お風呂でカビを取る裏技',
   situation: 'お風呂に入る前に',

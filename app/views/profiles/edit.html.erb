@@ -20,37 +20,43 @@
   </div>
 
    <div class="mypage-layout2">
-    <div class="mypage-layout3" style="background-color:#d3d3d3;">
+    <div class="mypage-layout3">
       <div><p class="personal-label">プロフィール名</p></div>
       <div><%= f.text_field :profile_name %></div>
     </div>
-    <div class="mypage-layout3" style="background-color:#d3d3d3;">
+    <div class="mypage-layout3">
       <div><p class="personal-label">プロフィール画像</p></div>
       <div><%= f.attachment_field :profile_image, class: "profile-form" %></div>
     </div>
-    <div class="mypage-layout4" style="background-color:#f5f5f5;">
+    <div class="mypage-layout4">
       <div><p class="personal-label">introduction</p></div>
       <div><%= f.text_area :introduction, class: "profile-form2" %></div>
     </div>
-     <div class="mypage-btn"><%= f.submit "プロフィール作成"%></div>
-    </div>
-
+   </div>
   </div>
-  <% end %>
-</div>
-<div>
-   <div class="mypage-title-frame"><h3 class="mypage-title">投稿記事一覧</h3></div>
-</div>
-<div class="container">
-    <% @articles.each do |article| %>
-    <div class="row mypage-articles-index">
-      <div>
-        <div class="image-layout"></div>
-        <div><%= @user.profile_name %></div>
-      </div>
-      <div class="col-md-5 mypage-article-title"><%= link_to article.title, article_path  %></div>
-      <div class="mypage-layout-button"><%= button_to "編集" , edit_article_path %></div>
-      <div class="mypage-layout-button"><%= button_to "削除" , article_path, method: :delete %></div>
+  <div>
+   <div class="mypage-title-frame"><h3 class="mypage-title">詳細プロフィール</h3></div>
+  </div>
+  <div class="row">
+    <div class="profile-detail">
+      <p class="personal-label">年齢:<%= f.text_field :age %></p>
     </div>
-    <% end %>
+    <div class="profile-detail">
+      <p class="personal-label">職業:<%= f.text_field :job %></p>
+    </div>
+    <div class="profile-detail">
+      <p class="personal-label">出身:<%= f.text_field :from %></p>
+    </div>
+    <div class="profile-detail">
+      <p class="personal-label">趣味:<%= f.text_field :hobby %></p>
+    </div>
+    <div class="profile-detail">
+      <p class="personal-label">得意:<%= f.text_field :like %></p>
+    </div>
+    <div class="profile-detail">
+      <p class="personal-label">苦手:<%= f.text_field :dislike %></p>
+    </div>
+  </div>
+  <div class="mypage-btn"><%= f.submit "プロフィール作成"%></div>
+  <% end %>
 </div>

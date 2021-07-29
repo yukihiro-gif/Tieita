@@ -28,7 +28,7 @@
              <%= link_to "Tieita", articles_path %>
            </div>
            <div class="col-md-5"></div>
-           <div class="col-md-1 header-box"><%= button_to "About", homes_about_path %></div>
+           <div class="col-md-1 header-box"><%= button_to "About", homes_about_path, method: :get %></div>
            <div class="col-md-1 header-box">
              <%= link_to new_user_registration_path do %>
                <i class="fas fa-user-plus"></i>

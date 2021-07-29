@@ -21,28 +21,36 @@
     <div class="make-article-procedure" style="background-color:#f5f5f5;">
 
       <div class="article-contents">
-        <div class="article-image"><%= @article.article_image1 %></div>
+        <div class="article-image">
+          <%= attachment_image_tag @article, :article_image1, :fill, 250, 160, format: 'jpeg', class: "profile-image-layout" %>
+        </div>
         <div class="article-text-field" >
           <div class="article-text"><%= @article.description1 %></div>
         </div>
       </div>
 
       <div class="article-contents">
-        <div class="article-image"><%= @article.article_image2 %></div>
+        <div class="article-image">
+          <%= attachment_image_tag @article, :article_image1, :fill, 250, 160, format: 'jpeg', class: "profile-image-layout" %>
+        </div>
         <div class="article-text-field" >
           <div class="article-text"><%= @article.description2 %></div>
         </div>
       </div>
 
       <div class="article-contents">
-        <div class="article-image"><%= @article.article_image3 %></div>
+        <div class="article-image">
+          <%= attachment_image_tag @article, :article_image1, :fill, 250, 160, format: 'jpeg', class: "profile-image-layout" %>
+        </div>
         <div class="article-text-field" >
           <div class="article-text"><%= @article.description3 %></div>
         </div>
       </div>
 
       <div class="article-contents">
-        <div class="article-image"><%= @article.article_image4 %></div>
+        <div class="article-image">
+          <%= attachment_image_tag @article, :article_image1, :fill, 250, 160, format: 'jpeg', class: "profile-image-layout" %>
+        </div>
         <div class="article-text-field" >
           <div class="article-text"><%= @article.description4 %></div>
         </div>
@@ -61,15 +69,23 @@
         <%= render "likes/like", article: @article %>
      </div>
     </div>
+    <% else %>
+    <div class="article-show-favorite-frame">
+      <p>この記事には</p>
+      <div class="article-show-favorite-text" >
+        <%= @article.favorites.count %>
+      </div>
+      <p>件のユーザがいいねを付けています。</p>
+    </div>
     <% end %>
   </div>
 
 　<div>
 　  <h3>この記事を書いたユーザ</h3>
   <div class="row article-new-frame5">
-    <div class=" col-md-3 article-new-frame3">
-      <%= attachment_image_tag @article.user, :profile_image, :fill, 230, 120, format: 'jpeg', class: "profile-image-layout" %>
-      <%= link_to @article.user.profile_name, profile_path(@article.user.id), class: "profile-image-layout" %>
+    <div class=" col-md-2 article-new-frame3">
+      <%= attachment_image_tag @article.user, :profile_image, :fill, 130, 120, format: 'jpeg', class: "profile-image-layout" %>
+      <div><%= link_to @article.user.profile_name, profile_path(@article.user.id), class: "profile-image-layout" %></div>
     </div>
     <div class="col-md-7 introduction-text">
       <tr>

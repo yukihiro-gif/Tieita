@@ -1,1 +1,1 @@
-$('#sort-btn').html('<%#= render 'searches/sort', article: @article %>');
+$('#sort-btn').html('<%= j(render 'searches/sort', article: @article, articles: @articles) %>');

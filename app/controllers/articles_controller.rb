@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @likes = Like.where(user_id: current_user.id)
+    
   end
 
   def show
@@ -23,9 +25,9 @@ class ArticlesController < ApplicationController
     article.user_id = current_user.id
 
     if article.save
-      redirect_to "", notice: "You have updated book successfully."
+      redirect_to "", notice: "ページの作成に成功しました。"
     else
-      redirect_to new_article_path
+      redirect_to new_article_path, notice: "ページの作成に失敗しました。"
     end
   end
 
@@ -33,9 +35,9 @@ class ArticlesController < ApplicationController
     article = Article.find(params[:id])
 
     if article.update(params_article)
-      redirect_to articles_path
+      redirect_to articles_path, notice: "ページの編集に成功しました。"
     else
-      render :edit
+      render :edit, notice: "ページの編集に失敗しました。"
     end
   end
 

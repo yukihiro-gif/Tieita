@@ -13,24 +13,24 @@
 ActiveRecord::Schema.define(version: 2021_07_22_020707) do
 
   create_table "articles", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "title", null: false
-    t.text "situation", null: false
-    t.string "article_image1"
-    t.text "description1", null: false
-    t.string "article_image2"
+    t.integer "user_id"
+    t.string "title"
+    t.text "situation"
+    t.string "article_image1_id"
+    t.text "description1"
+    t.string "article_image2_id"
     t.text "description2"
-    t.string "article_image3"
+    t.string "article_image3_id"
     t.text "description3"
-    t.string "article_image4"
+    t.string "article_image4_id"
     t.text "description4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "article_id", null: false
-    t.integer "user_id", null: false
+    t.integer "article_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 2021_07_22_020707) do
   end
 
   create_table "post_comments", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "article_id", null: false
-    t.text "comment", null: false
+    t.integer "user_id"
+    t.integer "article_id"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

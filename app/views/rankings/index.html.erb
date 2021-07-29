@@ -5,21 +5,24 @@
       <table class="search-table">
         <thead>
           <tr class="table-around-border">
+             <th class="col-md-1">順位</th>
              <th class="col-md-2">投稿者</th>
              <th class="col-md-4">タイトル</th>
-             <th class="col-md-4">シチュエーション</th>
+             <th class="col-md-4">こんな場面で役立つ知識です</th>
          </tr>
         </thead>
         <tbody>
           <% @articles.each do |article| %>
           <% if @articles != nil %>
          <tr class="table-around-border">
-             <td class="col-md-2">
-               <%= article.user.profile_image %>
-               <%= link_to article.user.profile_name, profile_path(article.user.id) %>
+             <td class="col-md-1">○位</td>
+             <td class="col ranking-article-layout">
+               <%= attachment_image_tag article.user, :profile_image, :fill, 80, 80, format: 'jpeg' %>
+               <div><%= link_to article.user.profile_name, profile_path(article.user.id) %></div>
              </td>
              <td class="col-md-4"><%= link_to article.title, article_path(article) %></td>
-             <td class="col-md-4"><%= article.situation%></td>
+             <td class="col-md-3"><%= article.situation%></td>
+             <td class="col-md-2">❤️<%= article.favorites.count %></td>
          </tr>
          <% else %>
           <tr>

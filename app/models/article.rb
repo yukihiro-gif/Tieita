@@ -4,6 +4,11 @@ class Article < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  attachment :article_image1
+  attachment :article_image2
+  attachment :article_image3
+  attachment :article_image4
+
 
   #『いいね』機能のインスタンスメソッド
   def favorited_by?(user)

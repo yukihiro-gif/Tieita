@@ -14,13 +14,15 @@
           <% @articles.each do |article| %>
           <% if @articles != nil %>
          <tr class="table-around-border">
-             <td class="col-md-2">
-               <%= article.user.profile_image %>
+             <td class="col ranking-article-layout">
+               <%= attachment_image_tag article.user, :profile_image, :fill, 120, 80, format: 'jpeg' %>
                <%= link_to article.user.profile_name, profile_path(article.user.id) %>
              </td>
              <td class="col-md-4"><%= link_to article.title, article_path(article) %></td>
              <td class="col-md-4"><%= article.situation%></td>
+             <td class="col-md-4">いいね❤️<%= article.favorites.count %></td>
          </tr>
+
          <% else %>
           <tr>
             <td class="col-md-10">投稿データはありません</td>

@@ -2,19 +2,25 @@
 <div class="container">
   <div class="row profile-show-frame1">
     <div class="col-md-2 profile-show-frame2">
-      <%= attachment_image_tag @user, :profile_image, :fill, 300, 300, format: 'jpeg' %>
-      <%= @user.profile_name %>
+      <%= attachment_image_tag @user, :profile_image, :fill, 140, 140, format: 'jpeg', class: "profile-image" %>
     </div>
-    <div class="col-md-8 profile-show-frame3">
+    <div class="col-md-6 profile-show-frame3">
       <div class="profile-show-name">
-         <h4>自己紹介</h4>
+         <h4>ユーザ名：<%= @user.profile_name %></h4>
+         <h5>自己紹介：</h5>
          <%= @user.introduction %>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8"></div>
+    <div class="col-md-8 profile-show-frame4">
+　　　<div class="profile-font"><h5>年齢：<%= @user.age %></h5></div>
+      <div class="profile-font"><h5>仕事：<%= @user.job %></h5></div>
+      <div class="profile-font"><h5>出身：<%= @user.from %></h5></div>
+      <div class="profile-font"><h5>趣味：<%= @user.hobby %></h5></div>
+      <div class="profile-font"><h5>得意：<%= @user.like %></h5></div>
+      <div class="profile-font"><h5>苦手：<%= @user.dislike %></h5></div>
+    </div>
   </div>
 
   <% if @user == current_user %>
