@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2021_07_22_020707) do
     t.string "name_mei", null: false
     t.string "name_kana_sei", null: false
     t.string "name_kana_mei", null: false
-    t.integer "tel", null: false
+    t.string "tel", null: false
     t.string "profile_name"
     t.string "profile_image_id"
     t.text "introduction"
