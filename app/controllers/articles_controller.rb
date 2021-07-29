@@ -6,7 +6,6 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
     @likes = Like.where(user_id: current_user.id)
-    
   end
 
   def show

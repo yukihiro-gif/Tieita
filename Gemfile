@@ -58,6 +58,6 @@ end
 gem "font-awesome-sass"
 gem 'rubocop-airbnb'
 group :test do
-gem 'rspec-rails'
+  gem 'rspec-rails'
 end
 gem "toastr-rails"

@@ -14,7 +14,7 @@
   </div>
   <div class="row">
     <div class="col-md-8 profile-show-frame4">
-　　　<div class="profile-font"><h5>年齢：<%= @user.age %></h5></div>
+      <div class="profile-font"><h5>年齢：<%= @user.age %></h5></div>
       <div class="profile-font"><h5>仕事：<%= @user.job %></h5></div>
       <div class="profile-font"><h5>出身：<%= @user.from %></h5></div>
       <div class="profile-font"><h5>趣味：<%= @user.hobby %></h5></div>
@@ -24,43 +24,42 @@
   </div>
 
   <% if @user == current_user %>
-       <div class="profile-show-edit-btn"><%= button_to "投稿記事作成", new_article_path, method: :get %></div>
-       <div class="profile-show-edit-btn"><%= button_to "プロフィール編集", edit_profile_path, method: :get %></div>
-      <% end %>
-
-
+       <div class="col-md-8 mx-auto profile-show-edit-btn">
+          <%= button_to "投稿記事作成", new_article_path, method: :get %>
+       </div>
+       <div class="col-md-8 mx-auto profile-show-edit-btn">
+          <%= button_to "プロフィール編集", edit_profile_path, method: :get %>
+       </div>
+  <% end %>
 
 
   <div><h3 class="profile-show-heading">投稿記事一覧</h3></div>
   <div class="row">
-
     <% @articles.each do |article| %>
-    <table>
-    <tbody>
-    <tr class="table-around-border">
-      <td>
-        <p class="col-md-8 profile-show-article-title">
-          <%= link_to article.title, article_path(article) %>
-        </p>
-      </td>
-      <div class="col-md-2">
-        <td>いいねされた数：<%= article.favorites.count%></td>
-        <td>コメント数：<%= article.post_comments.count %></td>
-      </div>
-　　<% if @user == current_user %>
-　　  <td class="col-md-1">
-　　    <div class="profile-show-form">
-　　     <%= button_to "記事編集", edit_article_path(article), method: :get, local: true, class: "profile-show-btn" %>
-　　    </div>
-　　  </td>
-　　  <td class="col-md-1">
-　　    <div class="profile-show-form">
-　　     <%= button_to "記事削除", article_path, method: :delete, local: true, class: "profile-show-btn" %>
-　　    </div>
-　　  </td>
-　　<% end %>
-    </tr>
-    </tbody>
+    <table class="table-show-layout">
+      <tbody>
+        <tr class="table-around-border">
+          <td>
+            <p class="profile-show-article-title">
+              <%= link_to article.title, article_path(article) %>
+            </p>
+          </td>
+            <td class="profile-show-form">
+              <div>いいねされた数：<%= article.favorites.count%></div>
+              <div>コメント数：<%= article.post_comments.count %></div>
+            </td>
+          <% if @user == current_user %>
+          <td>
+            <div class="profile-show-form">
+              <%= button_to "記事編集", edit_article_path(article), method: :get, local: true, class: "profile-show-btn" %>
+            </div>
+            <div class="profile-show-form">
+              <%= button_to "記事削除", article_path, method: :delete, local: true, class: "profile-show-btn" %>
+            </div>
+          </td>
+          <% end %>
+        </tr>
+      </tbody>
     </table>
     <% end %>
 

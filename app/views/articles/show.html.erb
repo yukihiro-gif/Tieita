@@ -1,22 +1,17 @@
 
 <div class="container article-new-frame1">
 
-  <div class="article-new-title">
+  <div class="row article-new-title">
     『<%= @article.title %>』
   </div>
   <div class="row article-new-frame2">
-    <div class="article-new-frame4">
-      <div class="article-new-frame5">
-        <div>
-         <tr>
-          <th>シチュエーション：</th>
-          <td><%= @article.situation %></td>
-        </tr>
-       </div>
-      </div>
+    <div class="article-situation-layout" style="background-color:#ffffff;">
+      <span class="article-situation-text">こんな場面で役立つ知識です</span>
+    </div>
+    <div class="article-situation-layout2" style="background-color:#ffffff;">
+      <%= @article.situation %>
     </div>
   </div>
-
   <div class="row article-new-frame6">
     <div class="make-article-procedure" style="background-color:#f5f5f5;">
 
@@ -83,15 +78,31 @@
 　<div>
 　  <h3>この記事を書いたユーザ</h3>
   <div class="row article-new-frame5">
-    <div class=" col-md-2 article-new-frame3">
+    <div class=" col-md-2 article-new-frame3" style="background-color:#ffffff;">
       <%= attachment_image_tag @article.user, :profile_image, :fill, 130, 120, format: 'jpeg', class: "profile-image-layout" %>
       <div><%= link_to @article.user.profile_name, profile_path(@article.user.id), class: "profile-image-layout" %></div>
     </div>
-    <div class="col-md-7 introduction-text">
-      <tr>
-        <th>introduction：</th>
-        <td><%= @article.user.introduction %></td>
-      </tr>
+    <div class="col-md-7 introduction-text" style="background-color:#ffffff;">
+      <table>
+        <tr>
+          <th>年齢：</th>
+          <td><%= @article.user.age %></td>
+        </tr>
+        <tr>
+          <th>職業：</th>
+          <td><%= @article.user.job %></td>
+        </tr>
+        <tr>
+          <th>趣味：</th>
+          <td><%= @article.user.hobby %></td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <th>自己紹介：</th>
+          <td><%= @article.user.introduction %></td>
+        </tr>
+      </table>
     </div>
   </div>
   </div>

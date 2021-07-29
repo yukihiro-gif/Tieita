@@ -7,5 +7,4 @@ class SearchesController < ApplicationController
   def sort
     @articles = Article.sort(params[:keyword])
   end
-
 end
