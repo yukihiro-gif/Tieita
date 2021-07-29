@@ -13,9 +13,13 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(params_user)
-    redirect_to ''
+    @user = User.find(params[:id])
+    if @user.update(params_user)
+      bypass_sign_in(@user)
+      redirect_to profile_path(@user), notice: "プロフィールの更新に成功しました。"
+    else
+      render :edit, notice: "編集に失敗しました。もう一度やり直してください。"
+    end
   end
 
   def edit
@@ -26,6 +30,6 @@ class ProfilesController < ApplicationController
   private
 
   def params_user
-    params.require(:user).permit(:profile_image, :profile_name, :introduction, :tel, :email, :password)
+    params.require(:user).permit(:profile_image, :profile_name, :introduction, :tel, :email, :password, :age, :job, :from, :hobby, :like, :dislike)
   end
 end

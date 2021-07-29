@@ -50,7 +50,7 @@
 }
 .font-style{
   font-size: 40px;
-  margin: 0 auto;
+  margin: 60px auto;
   text-align: center;
 }
 .font-style2{
@@ -118,9 +118,8 @@
   width: 30px;
   height: 50px;
 }
-.header-box{                              /*header内の要素のデザイン*/
-  width: 250px;
-  display: flex;
+.fa-user-plus, .fa-sign-in-alt{                              /*header内の要素のデザイン*/
+  width: 100px;
 }
 .header-search-field{
   width: 350px;
@@ -355,6 +354,11 @@ footer{
 .article-main{
   margin-top: 20px;
 
+}
+
+/*お気に入り機能周りのレイアウト*/
+.likes-article-all{
+  margin-top: 30px;
 }
 
 .search-table{

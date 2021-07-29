@@ -8,15 +8,11 @@
         <h2 class="font-style" style="color: #ffa500;">
           あなたの『知っている』をみんなの『知っている』に
         </h2>
-        <h13 class="font-style2" style="color: #ffa500;">
-          相互情報共有サイト
-        </h13>
+        <%= link_to articles_path, method: :get, class: "homes-start-button" do %>
         <h5 class="font-style" style="color: #ffa500;">
           『ちえ板』
         </h5>
-         <div class="homes-layout">
-         <%= button_to "START", articles_path, method: :get, class: "homes-start-button" %>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

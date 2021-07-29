@@ -42,6 +42,7 @@
           <td>
             <p class="profile-show-article-title">
               <%= link_to article.title, article_path(article) %>
+
             </p>
           </td>
             <td class="profile-show-form">
@@ -54,7 +55,7 @@
               <%= button_to "記事編集", edit_article_path(article), method: :get, local: true, class: "profile-show-btn" %>
             </div>
             <div class="profile-show-form">
-              <%= button_to "記事削除", article_path, method: :delete, local: true, class: "profile-show-btn" %>
+              <%= button_to "記事削除", article_path(article), method: :delete, local: true, class: "profile-show-btn" %>
             </div>
           </td>
           <% end %>

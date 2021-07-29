@@ -18,16 +18,24 @@
       <%= render 'searches/sort', article: @article, articles: @articles %>
     </div>
     <div class="col-md-3 mx-auto article-sidebar">
+      <% if user_signed_in? %>
       <div>
-      <h6 class="col mx-auto">メニュー</h6>
+      <h6 class="col mx-auto">(メニュー)</h6>
       <div>・<%= link_to "ランキング", rankings_index_path %></div>
       </div>
       <div class="likes-article-all">
-        <h6>お気に入り記事</h6>
-        <% @likes.each do |like| %>
-          <div><%= link_to like.article.title, article_path(like.article.id) %></div>
-        <% end %>
+        <h6>（お気に入り記事）</h6>
+          <% @likes.each do |like| %>
+            <div><%= link_to like.article.title, article_path(like.article.id) %></div>
+          <% end %>
       </div>
+      <% else %>
+      <p class="likes-article-all">
+         メニュー機能の利用には</br>
+         <%= link_to "新規登録", new_user_registration_path %>
+         が必要です。
+      </p>
+      <% end %>
     </div>
     </div>
   </div>

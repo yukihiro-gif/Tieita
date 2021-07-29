@@ -52,7 +52,7 @@
       </div>
 
     </div>
-    <% if @user.id != current_user.id %>
+    <% if @article.user.id != current_user.id %>
     <div class="article-show-favorite-frame">
       <p>この記事は役に立ちましたか？</p>
       <div class="article-show-favorite-text">
