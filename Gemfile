@@ -61,3 +61,4 @@ group :test do
   gem 'rspec-rails'
 end
 gem "toastr-rails"
+gem 'rails-i18n'

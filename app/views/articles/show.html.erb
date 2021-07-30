@@ -107,33 +107,9 @@
   </div>
   </div>
 
-  <div class="article-new-frame7">
-    <div class="comment-title"><h3>コメント</h3></div>
-    <div id="comment-btn">
-      <%= render 'post_comments/comment', article: @article, post_comment: @post_comment %>
-    </div>
+  <div class="comment-form-layout">
+    <%= render 'post_comments/comment', article: @article, post_comment: @post_comment, post_comments: @post_comments %>
   </div>
-  <div class="row article-new-frame8">
-    <div class="article-show-frame9">
-
-      <div class="article-new-comment-design">
-        <h3>コメント一覧</h3>
-        <h3>（<%= @post_comments.count %>件）</h3>
-      </div>
-      <% @post_comments.each do |post_comment|%>
-      <div class="article-new-comment-design2">
-        <div>
-          <div><%= attachment_image_tag @article.user, :profile_image, :fill, 130, 120, format: 'jpeg', class: "profile-image-layout" %></div>
-          <div><%= link_to post_comment.user.profile_name, profile_path(post_comment.user.id) %></div>
-        </div>
-        <div>
-          <div><p><%=safe_join(post_comment.comment.split("\n"),tag(:br))%></p></div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-
 
 
 </div>

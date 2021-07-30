@@ -13,10 +13,6 @@
       <div class="personal-label">email</div>
       <div class="personal-main"><%= f.email_field :email, class: "mypage-form2" %></div>
     </div>
-    <div class="mypage-layout3">
-      <div class="personal-label">パスワード</div>
-      <div class="personal-main"><%= f.password_field :password, class: "mypage-form2" %></div>
-    </div>
   </div>
 
    <div class="mypage-layout2">
@@ -29,7 +25,7 @@
       <div><%= f.attachment_field :profile_image, class: "profile-form" %></div>
     </div>
     <div class="mypage-layout4">
-      <div><p class="personal-label">introduction</p></div>
+      <div><p class="personal-label">自己紹介</p></div>
       <div><%= f.text_area :introduction, class: "profile-form2" %></div>
     </div>
    </div>
@@ -57,6 +53,6 @@
       <p class="personal-label">苦手:<%= f.text_field :dislike %></p>
     </div>
   </div>
-  <div class="mypage-btn"><%= f.submit "プロフィール更新"%></div>
+  <div class="mypage-btn"><%= f.submit "プロフィール更新" %></div>
   <% end %>
 </div>

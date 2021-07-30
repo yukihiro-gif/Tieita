@@ -9,6 +9,10 @@ class Article < ApplicationRecord
   attachment :article_image3
   attachment :article_image4
 
+  validates :title, presence: true
+  validates :situation, presence: true
+  validates :description1, presence: true
+
   # 『いいね』機能のインスタンスメソッド
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?

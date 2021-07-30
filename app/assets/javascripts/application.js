@@ -58,5 +58,3 @@ $(document).ready(function () {
   });
 });
 
-
-//ariticles/index.html.erbページのタブ作成

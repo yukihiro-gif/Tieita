@@ -27,26 +27,26 @@ class ArticlesController < ApplicationController
     article.user_id = current_user.id
 
     if article.save
-      redirect_to articles_path, notice: "ページの作成に成功しました。"
+      redirect_to articles_path, notice: "投稿記事の作成に成功しました"
     else
-      redirect_to new_article_path, notice: "ページの作成に失敗しました。"
+      redirect_to new_article_path, alert: "投稿記事の作成に失敗しました。必ず[タイトル][使用場面][手順①]を記入してください。"
     end
   end
 
   def update
-    article = Article.find(params[:id])
+    @article = Article.find(params[:id])
 
-    if article.update(params_article)
-      redirect_to articles_path, notice: "ページの編集に成功しました。"
+    if @article.update(params_article)
+      redirect_to articles_path, notice: "投稿記事の更新に成功しました。"
     else
-      render :edit, notice: "ページの編集に失敗しました。"
+      redirect_to edit_article_path, alert: "投稿記事の更新に失敗しました。必ず[タイトル][使用場面][手順①]を記入してください。"
     end
   end
 
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to profile_path(current_user)
+    redirect_to profile_path(current_user), notice: "投稿記事を削除しました。"
   end
 
   private
