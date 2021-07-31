@@ -44,11 +44,17 @@
           <% end %>
         </div>
         <div class="header-layout-second" style="background-color: #a9a9a9;">
-          <div class="col-md-12">
-            <%= form_with url:search_path, method: :get, local: true do |f| %>
+          <div class="col-md-12 header-bar2">
+               <div class="col-md-5"></div>
+             <%= form_with url:search_path, method: :get, local: true do |f| %>
                <div class="header-search-field">
                  <%= f.text_field :keyword ,placeholder: "キーワード入力", value: @keyword, class: "header-search-form" %>
                  <%= f.submit "検索", class: "header-search-btn"%>
+               </div>
+             <% end %>
+             <% if user_signed_in? %>
+               <div class="col-md-4 hello-text">
+                 ようこそ<%= current_user.profile_name %>さん
                </div>
              <% end %>
           </div>
