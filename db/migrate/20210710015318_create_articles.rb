@@ -12,6 +12,8 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.text :description3
       t.string :article_image4_id
       t.text :description4
+      
+      t.decimal :score, precision: 5, scale: 3
 
       t.timestamps
     end

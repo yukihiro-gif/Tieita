@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   def create
     article = Article.new(params_article)
     article.user_id = current_user.id
-
+    article.score = Language.get_data(params_article[:title])  #この行を追加
     if article.save
       redirect_to articles_path, notice: "投稿記事の作成に成功しました"
     else

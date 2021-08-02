@@ -62,3 +62,4 @@ group :test do
 end
 gem "toastr-rails"
 gem 'rails-i18n'
+gem 'dotenv-rails'

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_07_22_020707) do
     t.text "description3"
     t.string "article_image4_id"
     t.text "description4"
+    t.decimal "score", precision: 5, scale: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
