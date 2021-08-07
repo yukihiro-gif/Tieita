@@ -1,0 +1,12 @@
+<div class="scoring-form-layout">
+  <%= form_with model:score, url:scores_create_path, method: :post, data: {remote: true} do |f| %>
+    <%= f.text_field :title, placeholder: "キーワード入力", class:"scoring-add-form" %>
+    <%= f.submit "採点" %>
+  <% end %>
+</div>
+<div class="scoring-layout">
+  <h5 class="text-center"><%= scoring.title %></h5>
+
+  <span class="text-center"><%= scoring.score.to_f * 10 %>点</span>
+
+</div>

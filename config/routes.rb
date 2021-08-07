@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'scores/index'
+  post 'scores/create'
   get '/search' => 'searches#search'
   post '/sort' => 'searches#sort'
   get 'profiles/new'

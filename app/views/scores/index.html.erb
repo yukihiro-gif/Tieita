@@ -1,0 +1,65 @@
+<diV class="container">
+  <div class="row scoring-text">
+    <div class="">
+      <p>Good Title とは…</p>
+      <p>
+        投稿記事のタイトルを『感情分析』という機能を用いて採点したものです。タイトルにポジティブな文章が入っているものほど高得点なります。</br>
+        記事のタイトルを考える上で参考にしてください。
+      </p>
+    </div>
+  </div>
+  <div class="row scoring-sample">
+    <% @articles.each do |article| %>
+    <table class="search-table">
+        <thead>
+          <tr class="table-around-border">
+             <th class="col-md-2">投稿者</th>
+             <th class="col-md-4">タイトル</th>
+             <th class="col-md-4">こんな場面で役立つ知識です</th>
+             <th class="col-md-1">得点</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="table-around-border">
+             <td class="col ranking-article-layout">
+               <%= attachment_image_tag article.user, :profile_image, :fill, 80, 80, format: 'jpeg' %>
+               <div><%= link_to article.user.profile_name, profile_path(article.user.id) %></div>
+             </td>
+             <td class="col-md-4"><%= link_to article.title, article_path(article) %></td>
+             <td class="col-md-3"><%= article.situation%></td>
+             <td class="col-md-2"><%= article.score%>点</td>
+         </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+  <div class="row scoring-content mx-auto">
+    <div class="col-md-5 scoring-article ">
+      <h6 class="scoring-article-name"><%= current_user.profile_name %>の投稿記事</h6>
+      <% @my_articles.each do |article| %>
+       <div class="scoring-my-articles">
+         <table>
+           <thead>
+            <tr>
+              <td class="article-name1"></td>
+              <td class="article-name2"></td>
+            </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td><%= link_to article.title, article_path(article) %></td>
+               <td><%= article.score %>点</td>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+      <% end %>
+    </div>
+    <div class="col-md-5 scoring-form">
+      <h6 class="scoring-article-name">Good Title 確認フォーム</h6>
+      <div id="scoring-js">
+        <%= render 'scores/score', score: @score, scoring: @scoring %>
+      </div>
+    </div>
+  </div>
+</diV>
