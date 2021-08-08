@@ -32,7 +32,7 @@
   name_kana_mei: 'ハナコ',
   tel: '09012345678',
   profile_name: 'ハナ',
-  profile_image: File.open('./app/assets/images/5048383_m.jpg'),
+  profile_image: File.open('./app/assets/images/gahag-0035812925.jpg'),
   introduction: 'スポーツと映画鑑賞が趣味です。',
   age: '20',
   job: '花屋',
@@ -49,6 +49,7 @@
   name_kana_mei: 'ユウイチ',
   tel: '22222222222',
   profile_name: 'ゆーいち',
+  profile_image: File.open('./app/assets/images/gahag-0092038731-1.jpg'),
   introduction: 'サーフィンとバスケットが趣味です。よろしくお願いします',
   age: '32',
   job: 'ラーメン屋店主',
@@ -65,6 +66,7 @@
   name_kana_mei: 'テツト',
   tel: '33333333333',
   profile_name: 'テツ',
+  profile_image: File.open('./app/assets/images/gahag-0117363877.jpg'),
   introduction: '旅行が趣味です。家事の裏技が知りたいです',
   age: '22',
   job: 'サラリーマン',
@@ -81,6 +83,7 @@
   name_kana_mei: 'マサト',
   tel: '44444444444',
   profile_name: 'まっちゃん',
+  profile_image: File.open('./app/assets/images/gahag-0119100892.jpg'),
   introduction: 'まる',
   age: '32',
   job: 'サラリーマン',
@@ -91,11 +94,12 @@
 )
 
  User.all.each do |user|
- rand(0..5).times do |n|
+ rand(0..2).times do |n|
     Article.create!([{
     user_id: user.id,
-    title: 'ユーザ#{user.id}の記事NO.#{n}',
-    situation: '場面#{n}で使います',
+    title: "ユーザ#{n + 1}のすごい記事",
+    score: Language.get_data("ユーザ#{n + 1}のすごい記事"),
+    situation: "場面#{n + 1}で使います",
     article_image1: File.open('./app/assets/images/5048383_m.jpg'),
     description1: 'まずは〇〇を〇〇します。',
     description2: '次に〇〇を〇〇します。',
@@ -107,7 +111,7 @@ end
 
 Article.all.each do |article|
  User.all.each do |user|
-  rand(0..5).times do |n|
+  rand(0..2).times do |n|
     Favorite.create!(
       article_id: article.id,
       user_id: user.id,
@@ -118,7 +122,7 @@ end
 
 Article.all.each do |article|
  User.all.each do |user|
-  rand(0..5).times do |n|
+  rand(0..2).times do |n|
     Like.create!(
       article_id: article.id,
       user_id: user.id,
@@ -129,11 +133,11 @@ end
 
 Article.all.each do |article|
  User.all.each do |user|
-  rand(0..5).times do |n|
+  rand(0..2).times do |n|
     PostComment.create!(
       article_id: article.id,
       user_id: user.id,
-      comment: "ユーザ#{user.id}のコメント",
+      comment: "ユーザ#{n + 1}のコメント",
     )
   end
  end

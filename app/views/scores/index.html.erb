@@ -27,7 +27,7 @@
              </td>
              <td class="col-md-4"><%= link_to article.title, article_path(article) %></td>
              <td class="col-md-3"><%= article.situation%></td>
-             <td class="col-md-2"><%= article.score%>点</td>
+             <td class="col-md-2"><%= article.score.to_f * 10 %>点</td>
          </tr>
         </tbody>
       </table>
@@ -48,7 +48,7 @@
            <tbody>
              <tr>
                <td><%= link_to article.title, article_path(article) %></td>
-               <td><%= article.score %>点</td>
+               <td><%= article.score.to_f * 10 %>点</td>
              </tr>
            </tbody>
          </table>
