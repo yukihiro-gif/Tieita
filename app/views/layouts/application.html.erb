@@ -55,9 +55,9 @@
              <% if user_signed_in? %>
                <div class="col-md-4 hello-text">
                  <% if current_user.profile_name.blank? %>
-                   <%= link_to "ここからプロフィール名を設定しましょう", profile_path(current_user) %>
+                   <%= link_to "ここからプロフィールを設定しましょう", profile_path(current_user) %>
                  <% else %>
-                   ようこそ<%= current_user.profile_name %>さん
+                   ようこそ <%= current_user.profile_name %> さん
                  <% end %>
                </div>
              <% end %>
