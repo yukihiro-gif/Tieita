@@ -57,7 +57,7 @@
                  <% if current_user.profile_name.blank? %>
                    <%= link_to "ここからプロフィールを設定しましょう", profile_path(current_user) %>
                  <% else %>
-                   ようこそ <%= current_user.profile_name %> さん
+                   ようこそ <%= link_to current_user.profile_name, profile_path(current_user) %> さん
                  <% end %>
                </div>
              <% end %>
