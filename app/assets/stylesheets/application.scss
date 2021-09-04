@@ -664,3 +664,16 @@ footer{
   margin: 0 auto;
   border-bottom: 2px solid #d3d3d3;
 }
+
+/*kaminariのデザイン変更*/
+.page, .next, .last{
+  margin: 0 5px;
+}
+
+.page-link{
+  background-color: #ffdab9;
+  padding: 0;
+}
+.pagination {
+  justify-content: center;
+}

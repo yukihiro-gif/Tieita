@@ -1,0 +1,54 @@
+<div>
+        <div class="header-layout"  style="background-color: #ffdab9;">
+          <% if user_signed_in? %>
+          <!--ログイン済みユーザメニュー-->
+           <div class="col-md-2 header-box">
+             <%= link_to "Tieita", articles_path %>
+           </div>
+           <div class="col-md-5"></div>
+           <div class="col-md-1 header-box">
+              <i class="fas fa-sign-out-alt"><%= link_to "My page", profile_path(current_user) , method: :get %></i>
+            </div>
+           <div class="col-md-1 header-box">
+             <i class="fas fa-sign-out-alt"> <%= link_to "logout", destroy_user_session_path, method: :delete %></i>
+           </div>
+          <% else %>
+          <!--未ログインユーザメニュー-->
+           <div class="col-md-3 header-box">
+             <%= link_to "Tieita", articles_path %>
+           </div>
+           <div class="col-md-5"></div>
+           <div class="col-md-1 header-box"><%= link_to "About", homes_about_path %></div>
+           <div class="col-md-1 header-box">
+             <%= link_to new_user_registration_path do %>
+               <i class="fas fa-user-plus">新規登録</i>
+             <% end %>
+            </div>
+           <div class="col-md-1 header-box">
+             <%= link_to new_user_session_path do %>
+               <i class="fas fa-sign-in-alt" size:"5">ログイン</i>
+             <% end %>
+           </div>
+          <% end %>
+        </div>
+        <div class="header-layout-second" style="background-color: #a9a9a9;">
+          <div class="col-md-12 header-bar2">
+               <div class="col-md-5"></div>
+             <%= form_with url:search_path, method: :get, local: true do |f| %>
+               <div class="header-search-field">
+                 <%= f.text_field :keyword ,placeholder: "キーワード入力", value: @keyword, class: "header-search-form" %>
+                 <%= f.submit "検索", class: "header-search-btn"%>
+               </div>
+             <% end %>
+             <% if user_signed_in? %>
+               <div class="col-md-4 hello-text">
+                 <% if current_user.profile_name.blank? %>
+                   <%= link_to "ここからプロフィールを設定しましょう", profile_path(current_user) %>
+                 <% else %>
+                   ようこそ <%= link_to current_user.profile_name, profile_path(current_user) %> さん
+                 <% end %>
+               </div>
+             <% end %>
+          </div>
+        </div>
+      </div>
