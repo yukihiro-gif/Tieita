@@ -26,6 +26,9 @@
   box-sizing: border-box; /*リセットcssの記述*/
 }
 
+body, h3, h4, h5, h6{
+  font-size: 20px;
+}
 /*homes/topのレイアウト*/
 .top-background-image{
  background-color: #fffacd;
@@ -676,4 +679,22 @@ footer{
 }
 .pagination {
   justify-content: center;
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+  background: #ffdab9;
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #ffdab9;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
 }
