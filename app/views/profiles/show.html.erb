@@ -42,11 +42,10 @@
           <td>
             <p class="profile-show-article-title">
               <%= link_to article.title, article_path(article) %>
-
             </p>
           </td>
             <td class="profile-show-form">
-              <div>いいねされた数：<%= article.favorites.count%></div>
+              <div class="iine-form">いいねされた数：<%= article.favorites.count%></div>
               <div>コメント数：<%= article.post_comments.count %></div>
             </td>
           <% if @user == current_user %>
