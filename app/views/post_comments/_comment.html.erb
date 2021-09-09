@@ -18,7 +18,7 @@
       <% post_comments.each do |post_comment|%>
       <div class="article-new-comment-design2">
         <div>
-          <div><%= attachment_image_tag article.user, :profile_image, :fill, 130, 120, format: 'jpeg', class: "profile-image-layout" %></div>
+          <div><%= attachment_image_tag post_comment.user, :profile_image, :fill, 130, 120, format: 'jpeg', class: "profile-image-layout" %></div>
           <div><%= link_to post_comment.user.profile_name, profile_path(post_comment.user.id) %></div>
         </div>
         <div class="comment-space">
