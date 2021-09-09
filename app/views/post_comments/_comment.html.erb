@@ -21,7 +21,7 @@
           <div><%= attachment_image_tag article.user, :profile_image, :fill, 130, 120, format: 'jpeg', class: "profile-image-layout" %></div>
           <div><%= link_to post_comment.user.profile_name, profile_path(post_comment.user.id) %></div>
         </div>
-        <div>
+        <div class="comment-space">
           <div><p><%= safe_join(post_comment.comment.split("\n"),tag(:br)) %></p></div>
         </div>
       </div>
