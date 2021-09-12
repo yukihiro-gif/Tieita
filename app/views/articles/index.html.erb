@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row article-index-layout">
-    <div class="col-md-11 mx-auto" style="background-color:#ffdab9">
+    <div class="col-md-8 mx-auto" style="background-color:#ffdab9">
       <div class="container slider image-slider">
       <div id="theTarget">
         <div class="articles-top-image1"></div>
@@ -13,11 +13,38 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-11 mx-auto article-main-layout" style="background-color:#ffdab9">
-    <div class="col-md-9 mx-auto article-main"  id="sort-btn">
+    <div class="col-md-12 mx-auto article-main-layout" style="background-color:#ffdab9">
+      
+    <!-- MainContent(left)-->
+    <div class="col-md-2 mx-auto article-sidebar">
+      <% if user_signed_in? %>
+      <div>
+      <h6 class="col mx-auto">(メニュー)</h6>
+       <div>・<%= link_to "ランキング", rankings_index_path %></div>
+       <div>・<%= link_to "Good Title", scores_index_path %></div>
+      </div>
+      <div class="likes-article-all">
+        <h6>（お気に入り記事）</h6>
+          <% @likes.each do |like| %>
+            <div><%= link_to like.article.title, article_path(like.article.id) %></div>
+          <% end %>
+      </div>
+      <% else %>
+      <p class="likes-article-all">
+         メニュー機能の利用には</br>
+         <%= link_to "新規登録", new_user_registration_path %>
+         が必要です。
+      </p>
+      <% end %>
+    </div>
+    
+    <!-- MainContent(center)-->
+    <div class="col-md-8 mx-auto article-main"  id="sort-btn">
       <%= render 'searches/sort', article: @article, articles: @articles %>
     </div>
-    <div class="col-md-3 mx-auto article-sidebar">
+    
+    <!-- MainContent(right)-->
+    <div class="col-md-2 mx-auto article-sidebar">
       <% if user_signed_in? %>
       <div>
       <h6 class="col mx-auto">(メニュー)</h6>

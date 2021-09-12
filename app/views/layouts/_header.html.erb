@@ -6,20 +6,22 @@
              <%= link_to "Tieita", articles_path %>
            </div>
            <div class="col-md-4"></div>
-           <div class="col-md-3 header-box">
+           <div class="col-md-2 header-box">
               <i class="fas fa-sign-out-alt"><%= link_to "Mypage", profile_path(current_user) , method: :get %></i>
             </div>
-           <div class="col-md-3 header-box">
+           <div class="col-md-2 header-box">
              <i class="fas fa-sign-out-alt"> <%= link_to "logout", destroy_user_session_path, method: :delete %></i>
            </div>
           <% else %>
           <!--未ログインユーザメニュー-->
-           <div class="col-md-3 header-box">
+           <div class="col-md-2 header-box">
              <%= link_to "Tieita", articles_path %>
            </div>
            <div class="col-md-5"></div>
-           <div class="col-md-1 header-box"><%= link_to "About", homes_about_path %></div>
-           <div class="col-md-1 header-box">
+           <div class="col-md-1 header-box" style="">
+             <%= link_to "About", homes_about_path %>
+            </div>
+           <div class="col-md-1 header-box" style="font-size:19px">
              <%= link_to new_user_registration_path do %>
                <i class="fas fa-user-plus">新規登録</i>
              <% end %>
