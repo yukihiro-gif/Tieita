@@ -12,14 +12,18 @@
     </div>
     </div>
   </div>
+  </div>
+  <div class="container">
   <div class="row">
-    <div class="col-md-12 mx-auto article-main-layout" style="background-color:#ffdab9">
-      
+
+
     <!-- MainContent(left)-->
     <div class="col-md-2 mx-auto article-sidebar">
       <% if user_signed_in? %>
       <div>
-      <h6 class="col mx-auto">(メニュー)</h6>
+       <div class="title-layout" style="background-color:#ffffff">
+         <h6 class="col mx-auto">メニュー</h6>
+       </div>
        <div>・<%= link_to "ランキング", rankings_index_path %></div>
        <div>・<%= link_to "Good Title", scores_index_path %></div>
       </div>
@@ -37,24 +41,26 @@
       </p>
       <% end %>
     </div>
-    
+
     <!-- MainContent(center)-->
     <div class="col-md-8 mx-auto article-main"  id="sort-btn">
       <%= render 'searches/sort', article: @article, articles: @articles %>
     </div>
-    
+
     <!-- MainContent(right)-->
-    <div class="col-md-2 mx-auto article-sidebar">
+    <div class="col-md-2 mx-auto article-sidebar" >
       <% if user_signed_in? %>
       <div>
-      <h6 class="col mx-auto">(メニュー)</h6>
+      <h6 class="title-layout" class="col mx-auto">メニュー機能</h6>
        <div>・<%= link_to "ランキング", rankings_index_path %></div>
        <div>・<%= link_to "Good Title", scores_index_path %></div>
       </div>
-      <div class="likes-article-all">
+      <div class="likes-article-layout">
         <h6>（お気に入り記事）</h6>
           <% @likes.each do |like| %>
-            <div><%= link_to like.article.title, article_path(like.article.id) %></div>
+            <div class="likes-article-all" style="font-size:15px;">
+              <%= link_to like.article.title, article_path(like.article.id) %>
+            </div>
           <% end %>
       </div>
       <% else %>
@@ -66,5 +72,5 @@
       <% end %>
     </div>
     </div>
-  </div>
+
 </div>

@@ -365,7 +365,8 @@ footer{
 }
 .article-index-layout{
   height: 400px;
-  margin-top: 20px;
+  margin: 50px auto;
+
 }
 .article-main-layout{
   display: flex;
@@ -374,13 +375,18 @@ footer{
 }
 /*投稿一覧のデザイン*/
 .article-main{
-  margin-top: 20px;
-
+ border: 2px solid black;
+ padding: 0px;
+ 
 }
 
 /*お気に入り機能周りのレイアウト*/
-.likes-article-all{
+.likes-article-layout{
   margin-top: 30px;
+}
+
+.likes-article-all{
+  margin-left: 10px;
 }
 
 .search-table{
@@ -389,14 +395,16 @@ footer{
 }
 /*テーブルタグ周りに実線を配置*/
 .table-around-border{
-  height: 30px;
+  height: 50px;
   border-top: 2px solid #f5f5f5;
   border-bottom: 2px solid #f5f5f5;
 }
 .article-sidebar{
-  margin-top: 20px;
-  border-left: 2px solid #000;
+ border: 2px solid black;
+ padding: 0px;
+ margin-left: 10px;
 }
+
 .ranking-article-layout{
  width: 90px;
  height: 110px;
@@ -478,6 +486,12 @@ footer{
   width: 730px;
 }
 
+.title-layout{
+  background-color: #ffdab9;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+}
 /*profiles/editの記述*/
 .mypage-title-frame{
   width: 300px;
