@@ -5,5 +5,4 @@ class ScoresControllerTest < ActionDispatch::IntegrationTest
     get scores_index_url
     assert_response :success
   end
-
 end

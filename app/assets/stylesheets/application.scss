@@ -376,17 +376,18 @@ footer{
 /*投稿一覧のデザイン*/
 .article-main{
  border: 2px solid black;
- padding: 0px;
- 
+
+}
+
+/*投稿一覧(left main right)の余白*/
+.frame{
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /*お気に入り機能周りのレイアウト*/
 .likes-article-layout{
   margin-top: 30px;
-}
-
-.likes-article-all{
-  margin-left: 10px;
 }
 
 .search-table{
@@ -402,7 +403,6 @@ footer{
 .article-sidebar{
  border: 2px solid black;
  padding: 0px;
- margin-left: 10px;
 }
 
 .ranking-article-layout{
@@ -491,6 +491,7 @@ footer{
   height: 40px;
   width: 100%;
   line-height: 40px;
+
 }
 /*profiles/editの記述*/
 .mypage-title-frame{
@@ -724,3 +725,7 @@ footer{
 .pagination>li>a:hover {
   border-radius: 15px;    /*角を丸くする*/
 }
+
+
+
+
