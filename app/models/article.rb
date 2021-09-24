@@ -26,13 +26,13 @@ class Article < ApplicationRecord
   # ソート機能のインスタンスメソッド
   def self.sort(keyword)
     if keyword == "new"
-      Article.all.order(created_at: :DESC)
+      Article.all.order(created_at: :DESC).page().per(3).reverse_order
     elsif keyword == "old"
-      Article.all.order(created_at: :ASC)
+      Article.all.order(created_at: :ASC).page().per(3).reverse_order
     elsif keyword == "likes"
-      Article.find(Favorite.group(:article_id).order(Arel.sql('count(article_id) desc')).pluck(:article_id))
+      Article.find(Favorite.group(:article_id).order(Arel.sql('count(article_id) desc')).reverse_order.pluck(:article_id))
     elsif keyword == "dislikes"
-      Article.find(Favorite.group(:article_id).order(Arel.sql('count(article_id) asc')).pluck(:article_id))
+      Article.find(Favorite.group(:article_id).order(Arel.sql('count(article_id) asc')).reverse_order.pluck(:article_id))
     end
   end
 end

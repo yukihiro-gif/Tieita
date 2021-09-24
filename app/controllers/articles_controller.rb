@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
     if user_signed_in?
-      @articles = Article.page(params[:page]).reverse_order
+      @articles = Article.page(params[:page]).per(3)
       @likes = Like.where(user_id: current_user.id)
     else
       @articles = Article.all
